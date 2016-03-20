@@ -5,8 +5,8 @@
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 60px;
-  padding-left: 60px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .row {
   box-sizing: border-box;
@@ -22,15 +22,12 @@
 }
 .row-start-xs {
   justify-content: flex-start;
-  text-align: start;
 }
 .row-center-xs {
   justify-content: center;
-  text-align: center;
 }
 .row-end-xs {
   justify-content: flex-end;
-  text-align: end;
 }
 .row-top-xs {
   align-items: flex-start;
@@ -151,6 +148,11 @@
   flex-basis: auto;
   max-width: 100%;
 }
+.col-xs-min {
+  flex-grow: 0;
+  flex-basis: 0;
+  max-width: 100%;
+}
 .col-first-xs {
   order: -1;
 }
@@ -166,15 +168,12 @@
   }
   .row-start-sm {
     justify-content: flex-start;
-    text-align: start;
   }
   .row-center-sm {
     justify-content: center;
-    text-align: center;
   }
   .row-end-sm {
     justify-content: flex-end;
-    text-align: end;
   }
   .row-top-sm {
     align-items: flex-start;
@@ -295,6 +294,11 @@
     flex-basis: auto;
     max-width: 100%;
   }
+  .col-sm-min {
+    flex-grow: 0;
+    flex-basis: 0;
+    max-width: 100%;
+  }
   .col-first-sm {
     order: -1;
   }
@@ -311,15 +315,12 @@
   }
   .row-start-md {
     justify-content: flex-start;
-    text-align: start;
   }
   .row-center-md {
     justify-content: center;
-    text-align: center;
   }
   .row-end-md {
     justify-content: flex-end;
-    text-align: end;
   }
   .row-top-md {
     align-items: flex-start;
@@ -440,6 +441,11 @@
     flex-basis: auto;
     max-width: 100%;
   }
+  .col-md-min {
+    flex-grow: 0;
+    flex-basis: 0;
+    max-width: 100%;
+  }
   .col-first-md {
     order: -1;
   }
@@ -456,15 +462,12 @@
   }
   .row-start-lg {
     justify-content: flex-start;
-    text-align: start;
   }
   .row-center-lg {
     justify-content: center;
-    text-align: center;
   }
   .row-end-lg {
     justify-content: flex-end;
-    text-align: end;
   }
   .row-top-lg {
     align-items: flex-start;
@@ -583,6 +586,11 @@
   }
   .col-lg-shrink {
     flex-basis: auto;
+    max-width: 100%;
+  }
+  .col-lg-min {
+    flex-grow: 0;
+    flex-basis: 0;
     max-width: 100%;
   }
   .col-first-lg {
