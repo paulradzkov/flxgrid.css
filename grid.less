@@ -4,7 +4,6 @@
     // settings
     @grid-columns: 12;   // number of columns
     @gutter-width: 30px; // gap between columns
-    @outer-margin: 60px; // padding left and right for fluid container
 
     // media breakpoints (default: as on bootstrap)
     @breakpoints:
@@ -100,17 +99,14 @@
 
             &-start-@{class} {
                 justify-content: flex-start;
-                text-align: start;
             }
 
             &-center-@{class} {
                 justify-content: center;
-                text-align: center;
             }
 
             &-end-@{class} {
                 justify-content: flex-end;
-                text-align: end;
             }
 
             &-top-@{class}    { align-items: flex-start; }
@@ -134,6 +130,12 @@
 
             &-@{class}-shrink {
                 flex-basis: auto;
+                max-width: 100%;
+            }
+
+            &-@{class}-min {
+                flex-grow: 0;
+                flex-basis: 0;
                 max-width: 100%;
             }
 
@@ -174,8 +176,8 @@
         &-fluid {
             margin-right: auto;
             margin-left: auto;
-            padding-right: @outer-margin;
-            padding-left: @outer-margin;
+            padding-right: @half-gutter-width;
+            padding-left: @half-gutter-width;
         }
     }
 
