@@ -50,6 +50,12 @@ module.exports = (grunt) ->
 				files: [
 					"grid.css": "grid.less"
 				]
+			site:
+				options:
+					sourceMap: true
+				files: [
+					"out/css/template.css": "src/raw/css/template.less"
+				]
 
 		# track changes
 		watch:
@@ -58,9 +64,13 @@ module.exports = (grunt) ->
 				options:
 					livereload: true
 			less:
-				files: ['grid.less']
+				files: [
+					'grid.less'
+					'src/raw/css/template.less'
+				]
 				tasks: [
 					'less:development'
+					'less:site'
 					'notify:less'
 				]
 
@@ -108,6 +118,6 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-notify'
 
 	# Register our Grunt tasks.
-	grunt.registerTask 'deploy',			 ['clean', 'less:development', 'less:production', 'shell:deploy' ]
-	grunt.registerTask 'run',				 ['less:development', 'notify:less', 'shell:docpadrun', 'watch:less']
+	grunt.registerTask 'deploy',			 ['clean', 'less', 'shell:deploy' ]
+	grunt.registerTask 'run',				 ['less', 'notify:less', 'shell:docpadrun', 'watch:less']
 	grunt.registerTask 'default',			 ['run']

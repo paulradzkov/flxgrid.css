@@ -16,10 +16,8 @@ title: Fixed sidebar
     <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
 
-    <link rel="stylesheet" href="<%= @getUrl('/vendor/normalize.css/normalize.css') %>">
-    <link rel="stylesheet" href="<%= @getUrl('/vendor/bettertext.css/bettertext.css') %>">
-    <link rel="stylesheet" href="<%= @getUrl('/css/template.css') %>">
-    <link rel="stylesheet" href="<%= @getUrl('/css/github.css') %>">
+    <link rel="stylesheet" href="<%= @getUrl('/vendor/normalize/normalize.css') %>">
+    <link rel="stylesheet" href="<%= @getUrl('/vendor/bettertext/bettertext.css') %>">
     <link rel="stylesheet" href="<%= @getUrl('/grid.css') %>">
     <style media="screen">
         * {

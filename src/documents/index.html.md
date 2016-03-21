@@ -1,9 +1,9 @@
 ---
-title: Flexbox grid
+title: Flexbox Grid
 layout: site
 ---
 
-# Flexbox grid
+# Flexbox Grid
 
 <div class="row">
     <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
