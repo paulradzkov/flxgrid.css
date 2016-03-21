@@ -53,6 +53,7 @@
         .col(@index, @list) when (@index > @grid-columns) { // terminal
             @{list},
             .col-@{class}-shrink,
+            .col-@{class}-min,
             .col-@{class} {
                 box-sizing: border-box;
                 flex: 0 0 auto;
