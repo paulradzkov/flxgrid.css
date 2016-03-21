@@ -120,14 +120,62 @@ You can use auto-width columns together with width-specified columns.
 
 ### `.col-xs-shrink`
 
-You can use together fluid-width and fixed width columns.  
-`.col-xs-shrink` will fit its width to content width.
+You can use together fluid-width and shrink-width columns.  
+`.col-xs-shrink` will fit its width to content width without wrapping.  
+And when free space is not enough `.col-xs-shrink` drops under previous column.
 
 <div class="row">
     <div class="col-xs">
         <div class="box-row">auto</div>
     </div>
     <div class="col-xs-shrink">
+        <div class="box-row">some words here</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="col-xs-shrink">
+        <div class="box-row">a little bit more content here. «col-xs-shrink» will try fit it in one line. And when free space is not enough «col-xs-shrink» drops under previous column</div>
+    </div>
+</div>
+
+```html
+<div class="row">
+    <div class="col-xs">
+        auto width
+    </div>
+    <div class="col-xs-shrink">
+        <div class="box-row">
+            some words here
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs">
+        <div class="box-row">
+            auto
+        </div>
+    </div>
+    <div class="col-xs-shrink">
+        <div class="box-row">
+            a little bit more content here. col-xs-shrink will try fit it in one line {...}
+        </div>
+    </div>
+</div>
+```
+
+### `.col-xs-min`
+
+You can use together fluid-width and fixed width columns.  
+`.col-xs-min` will fit its width to content width (or min-width).
+
+<div class="row">
+    <div class="col-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="col-xs-min">
         <div class="box-row" style="width: 200px">200px</div>
     </div>
 </div>
