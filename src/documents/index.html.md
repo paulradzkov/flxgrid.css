@@ -1,6 +1,6 @@
 ---
 title: Flexbox grid
-layout: default
+layout: site
 ---
 
 # Flexbox grid
@@ -580,4 +580,77 @@ You can use more than one `.col-first-` and `.col-last-` in a row.
     <div class="col-xs-2">5</div>
     <div class="col-xs-2">6</div>
 </div>
+```
+
+# Usage in LESS
+
+## Default parameters
+
+Component has global mixin with settings named `.grid-settings();` and global variable `grid-render` which contains all code.
+
+Default settings:
+
+```less
+.grid-settings() {
+
+    // settings
+    @grid-columns: 12;   // number of columns
+    @gutter-width: 30px; // gap between columns
+
+    // media breakpoints (default: as on bootstrap)
+    @breakpoints:
+        ~"min-width: 768px",
+        ~"min-width: 992px",
+        ~"min-width: 1200px";
+
+    // max-width of containers according breakpoints
+    @container-maw:
+        750px,
+        970px,
+        1170px;
+
+    // names for breakpoint suffixes
+    @suffixes: xs, sm, md, lg;
+
+    // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
+    // suffixes-count = breakpoints-count + 1
+
+}
+```
+
+## Customizing parameters
+
+Running with default parameters:
+
+```less
+@import (less) "uicomponents/grid.less";
+```
+
+Redefining gutter-width and breakpoints:
+
+```less
+@import (less) "uicomponents/grid.less";
+
+.gutter-settings() {
+    @gutter-width: 60px;
+
+    // media breakpoints
+    @breakpoints:
+        "min-width: 480px",
+        "min-width: 768px",
+        "min-width: 992px",
+        "min-width: 1200px",
+        "min-width: 1600px";
+
+    // max-width of containers according breakpoints
+    @container-maw:
+        100%,
+        750px,
+        970px,
+        1170px,
+        1540px;
+
+    // names for breakpoint suffixes
+    @suffixes: xxs, xs, sm, md, lg, xlg;
+}
 ```

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+
+    <!-- Site Properities -->
+    <title><%= @getPreparedTitle() %></title>
+    <meta name="description" content="<%= @getPreparedDescription() %>" />
+    <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <!-- DocPad Meta -->
+    <%- @getBlock('meta').toHTML() %>
+
+    <!-- DocPad Styles + Our Own -->
+    <%- @getBlock('styles').add(@getUrl([].concat(@site.styles or []).concat(@document.styles or []))).toHTML() %>
+
+    <link rel="stylesheet" href="<%= @getUrl('/vendor/normalize.css/normalize.css') %>">
+    <link rel="stylesheet" href="<%= @getUrl('/vendor/bettertext.css/bettertext.css') %>">
+    <link rel="stylesheet" href="<%= @getUrl('/grid.css') %>">
+    <link rel="stylesheet" href="<%= @getUrl('/css/template.css') %>">
+    <link rel="stylesheet" href="<%= @getUrl('/css/github.css') %>">
+</head>
+<body>
+    <div id="top" class="allpage container-fluid">
+        <div class="allpage-body row">
+            <article class="col-xs-12 col-sm maincolumn">
+                <%- @content %>
+            </article>
+            <aside class="col-xs-12 col-sm-min col-first-xs col-last-sm asidecolumn">
+                <div class="fixed">
+                    <%= @partial('aside') %>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
