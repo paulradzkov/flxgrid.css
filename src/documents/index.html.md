@@ -45,11 +45,14 @@ Minimal syntax is `.row` → `.col-xs-*` → content.
 </div>
 ```
 
-There are 4 responsive breakpoints (xs, sm, md, lg) and 12 columns by default.
+There are 4 responsive breakpoints (**xs**, **sm**, **md**, **lg**) and 12 columns by default.
 
-Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at xs, sm, md & lg viewport widths.
+Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at **xs**, **sm**, **md** & **lg** viewport widths.
 
-Containers are optional.
+Containers are optional. They needed to compensate negative margin of a row.
+
+`.container` — has max-width on breakpoints from **sm**, **md**, **lg**. On **xs** size it utilize  all available width.  
+`.container-fluid` — doesn't have max-width. It use full width on all breakpoint.
 
 ## Auto width columns
 
@@ -169,7 +172,7 @@ And when free space is not enough `.col-xs-shrink` drops under previous column.
 ### `.col-xs-min`
 
 You can use together fluid-width and fixed width columns.  
-`.col-xs-min` will fit its width to content width (or min-width).
+`.col-xs-min` will shrink its width to content width (or min-width).
 
 <div class="row">
     <div class="col-xs">
@@ -213,18 +216,21 @@ You can use together fluid-width and fixed width columns.
 
 ## Nested Grids
 
-Nest grids inside grids inside grids.
+Nest grids inside grids inside grids.  
+Use `.container-fluid` for nested rows to compensate negative margins.
 
 <div class="row" style="background: #eee;">
     <div class="col-xs-8">
         <div class="box-row">
             <p>8</p>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="box-row">6</div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="box-row">6</div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="box-row">6</div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="box-row">6</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -503,12 +509,12 @@ Add classes to any column to reorder.
 
 ```html
 <div class="row">
-    <div class="col-xs-2">1</div>
+    <div class="col-xs-2 col-last-xs">1</div>
     <div class="col-xs-2">2</div>
     <div class="col-xs-2">3</div>
     <div class="col-xs-2">4</div>
     <div class="col-xs-2">5</div>
-    <div class="col-xs-2 col-first-xs">6</div>
+    <div class="col-xs-2">6</div>
 </div>
 ```
 
@@ -618,7 +624,7 @@ Default settings:
 }
 ```
 
-## Customizing parameters
+## Customizing
 
 Running with default parameters:
 

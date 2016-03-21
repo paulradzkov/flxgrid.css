@@ -20,7 +20,7 @@
         <ul class="row">
             <li class="col-xs-12 col-sm-12"><strong>Usage in LESS</strong></li>
             <li class="col-xs-min col-sm-12"><a href="#default-parameters">Default parameters</a></li>
-            <li class="col-xs-min col-sm-12"><a href="#customizing-parameters">Customizing parameters</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#customizing">Customizing</a></li>
         </ul>
     </nav>
 </div>
