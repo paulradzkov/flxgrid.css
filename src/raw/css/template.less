@@ -1,6 +1,7 @@
 @import (less) "../vendor/normalize/normalize.css";
 @import (less) "../vendor/bettertext/bettertext.css";
 @import (less) "github.css";
+@import (less) "_links.less";
 
 * {
     box-sizing: border-box;
@@ -100,4 +101,8 @@ body {
     margin-top: 5vw;
     font-size: 0.9em;
     color: #999;
+
+    a:not(:hover) {
+        color: #999;
+    }
 }
