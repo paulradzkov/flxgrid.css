@@ -57,6 +57,26 @@ module.exports = (grunt) ->
 					"out/css/template.css": "src/raw/css/template.less"
 				]
 
+		postcss:
+			options:
+				# map: true # inline sourcemaps
+
+				# or
+				map:
+					inline: false # save all sourcemaps as separate files...
+					annotation: 'out/css/' # ...to the specified directory
+
+				processors: [
+					require('autoprefixer')({browsers: [
+						'last 2 versions'
+						'Explorer >= 10'
+					]}) # add vendor prefixes
+				]
+			site:
+				src: 'out/*.css'
+			dist:
+				src: 'grid.css'
+
 		# track changes
 		watch:
 			out:
@@ -71,6 +91,7 @@ module.exports = (grunt) ->
 				tasks: [
 					'less:development'
 					'less:site'
+					'postcss:site'
 					'notify:less'
 				]
 
@@ -115,9 +136,10 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-connect'
 	grunt.loadNpmTasks 'grunt-shell-spawn'
 	grunt.loadNpmTasks 'grunt-newer'
+	grunt.loadNpmTasks 'grunt-postcss'
 	grunt.loadNpmTasks 'grunt-notify'
 
 	# Register our Grunt tasks.
-	grunt.registerTask 'deploy',			 ['clean', 'less', 'shell:deploy' ]
-	grunt.registerTask 'run',				 ['less', 'notify:less', 'shell:docpadrun', 'watch:less']
+	grunt.registerTask 'deploy',			 ['clean', 'less', 'postcss', 'shell:deploy' ]
+	grunt.registerTask 'run',				 ['less', 'postcss', 'notify:less', 'shell:docpadrun', 'watch:less']
 	grunt.registerTask 'default',			 ['run']
