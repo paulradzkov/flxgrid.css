@@ -125,18 +125,19 @@
         .col {
             &-@{class} {
                 flex-grow: 1;
-                flex-basis: 0;
+                flex-basis: 0%;
                 max-width: 100%;
             }
 
             &-@{class}-shrink {
+                flex-grow: 0;
                 flex-basis: auto;
                 max-width: 100%;
             }
 
             &-@{class}-min {
                 flex-grow: 0;
-                flex-basis: 0;
+                flex-basis: 0%;
                 max-width: 100%;
             }
 

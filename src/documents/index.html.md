@@ -172,25 +172,25 @@ And when free space is not enough `.col-xs-shrink` drops under previous column.
 ### `.col-xs-min`
 
 You can use together fluid-width and fixed width columns.  
-`.col-xs-min` will shrink its width to content width (or min-width).
+`.col-xs-min` requires explicit **min-width** on this element.
 
 <div class="row">
     <div class="col-xs">
         <div class="box-row">auto</div>
     </div>
-    <div class="col-xs-min">
-        <div class="box-row" style="width: 200px">200px</div>
+    <div class="col-xs-min" style="min-width: 200px">
+        <div class="box-row">200px</div>
     </div>
 </div>
 
 ```html
 <div class="row">
     <div class="col-xs">
-        auto width
+        auto
     </div>
-    <div class="col-xs-shrink">
-        <div class="box-row" style="width: 200px">
-            fixed width
+    <div class="col-xs-min" style="min-width: 200px">
+        <div class="box-row">
+            200px
         </div>
     </div>
 </div>
