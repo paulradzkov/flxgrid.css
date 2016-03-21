@@ -642,11 +642,11 @@ Redefining gutter-width and breakpoints:
 
     // media breakpoints
     @breakpoints:
-        "min-width: 480px",
-        "min-width: 768px",
-        "min-width: 992px",
-        "min-width: 1200px",
-        "min-width: 1600px";
+        ~"min-width: 480px",
+        ~"min-width: 768px",
+        ~"min-width: 992px",
+        ~"min-width: 1200px",
+        ~"min-width: 1600px";
 
     // max-width of containers according breakpoints
     @container-maw:
