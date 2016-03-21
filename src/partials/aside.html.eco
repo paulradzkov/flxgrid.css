@@ -15,7 +15,8 @@
         </ul>
         <ul class="row">
             <li class="col-xs-12 col-sm-12"><strong>Layout examples</strong></li>
-            <li class="col-xs-min col-sm-12"><a href="<%= @getUrl('/examples/fixed-sidebar') %>">Fixed-width sidebar</a></li>
+            <li class="col-xs-min col-sm-12"><a href="<%= @getUrl('/examples/') %>" target="_blank">All examples</a></li>
+            <li class="col-xs-min col-sm-12"><a href="<%= @getUrl('/examples/fixed-sidebar/') %>" target="_blank">Fixed-width sidebar</a></li>
         </ul>
         <ul class="row">
             <li class="col-xs-12 col-sm-12"><strong>Usage in LESS</strong></li>

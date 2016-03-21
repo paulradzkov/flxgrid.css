@@ -18,13 +18,15 @@
 
     <link rel="stylesheet" href="<%= @getUrl('/vendor/normalize.css/normalize.css') %>">
     <link rel="stylesheet" href="<%= @getUrl('/vendor/bettertext.css/bettertext.css') %>">
-    <link rel="stylesheet" href="<%= @getUrl('/grid.css') %>">
     <link rel="stylesheet" href="<%= @getUrl('/css/template.css') %>">
     <link rel="stylesheet" href="<%= @getUrl('/css/github.css') %>">
+    <link rel="stylesheet" href="<%= @getUrl('/grid.css') %>">
+
+    <script src="<%= @getUrl('/resizer/webcomponents-lite.min.js') %>"></script>
+    <link rel="import" href="<%= @getUrl('/resizer/components-dev.html') %>">
 </head>
 <body>
-    <article>
-       <%- @content %>
-    </article>
+   <%- @content %>
+    <div id="resizerblock" class="resizer-container"></div>
 </body>
 </html>

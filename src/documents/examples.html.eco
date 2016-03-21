@@ -1,0 +1,138 @@
+---
+layout: resizer
+title: Layout examples
+---
+
+<script>
+    window.addEventListener('WebComponentsReady', function(e) {
+      var resizer = new DeviceResizer({
+        defaultURL: '<%- @getUrl("/examples/fixed-sidebar/")%>',
+        defaultWindowWidth: 840,
+        defaultHandsetWidth: 360,
+        defaulrDevice: 'window',
+        deviceProfiles: [
+          {
+            device: 'window',
+            size: 1600
+          },
+          {
+            device: 'window',
+            size: 1440
+          },
+          {
+            device: 'window',
+            size: 1280
+          },
+          {
+            aspect: '4x3',
+            device: 'handset',
+            label: 'tablet',
+            landscape: true,
+            size: 1024
+          },
+          {
+            device: 'window',
+            size: 960
+          },
+          {
+            device: 'window',
+            size: 840
+          },
+          {
+            aspect: '4x3',
+            device: 'handset',
+            label: 'tablet',
+            landscape: false,
+            size: 720,
+          },
+          {
+            device: 'window',
+            size: 600
+          },
+          {
+            aspect: '16x9',
+            device: 'handset',
+            label: 'phone',
+            landscape: true,
+            size: 600
+          },
+          {
+            device: 'window',
+            size: 480
+          },
+          {
+            aspect: '3x2',
+            device: 'handset',
+            label: 'phone',
+            landscape: true,
+            size: 480
+          },
+          {
+            aspect: '16x9',
+            device: 'handset',
+            label: 'phone',
+            size: 360
+          },
+          {
+            device: 'window',
+            size: 320
+          },
+          {
+            aspect: '3x2',
+            device: 'handset',
+            label: 'phone',
+            size: 320
+          }
+        ],
+        suggestedSites: [
+          {
+            label: 'Fixed width sidebar',
+            url: '<%- @getUrl("/examples/fixed-sidebar/")%>'
+          },
+          {
+            label: 'Material Design',
+            url: 'https://design.google.com/spec/'
+          },
+          {
+            label: 'Android',
+            url: 'https://www.android.com/'
+          },
+          {
+            label: 'Pesto',
+            url: 'https://material-adaptive.firebaseapp.com/pesto/app/dist.html'
+          },
+          {
+            label: 'Shrine',
+            url: 'https://material-adaptive.firebaseapp.com/shrine/app/dist.html'
+          }
+        ],
+        windowBreakpoints: [
+          {
+            label: 'xxsmall',
+            size: 320
+          },
+          {
+            label: 'xsmall',
+            size: 480
+          },
+          {
+            label: 'small',
+            size: 600
+          },
+          {
+            label: 'medium',
+            size: 960
+          },
+          {
+            label: 'large',
+            size: 1280
+          },
+          {
+            label: 'xlarge',
+            size: Number.MAX_SAFE_INTEGER
+          }
+        ]
+      });
+      document.getElementById('resizerblock').appendChild(resizer);
+    });
+</script>
