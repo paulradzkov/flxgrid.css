@@ -90,8 +90,8 @@ title: Layout examples
             url: '<%- @getUrl("/examples/fixed-sidebar/")%>'
           },
           {
-            label: 'Material Design',
-            url: 'https://design.google.com/spec/'
+            label: 'The Holy Grail layout',
+            url: '<%- @getUrl("/examples/holy-grail/")%>'
           },
           {
             label: 'Android',

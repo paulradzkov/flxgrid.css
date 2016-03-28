@@ -1,0 +1,252 @@
+---
+layout: empty
+title: The Holy Grail layout
+---
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+
+    <!-- Site Properities -->
+    <title><%= @getPreparedTitle() %></title>
+    <meta name="description" content="<%= @getPreparedDescription() %>" />
+    <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <link rel="stylesheet" href="<%= @getUrl('/vendor/normalize/normalize.css') %>">
+    <link rel="stylesheet" href="<%= @getUrl('/vendor/bettertext/bettertext.css') %>">
+    <link rel="stylesheet" href="<%= @getUrl('/grid.css') %>">
+    <style media="screen">
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        min-height: 100vh;
+    }
+
+    .allpage {
+        min-height: 100vh;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+                flex-order: -1;
+    }
+    .allpage-body {
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+    }
+    .allpage-header,
+    .allpage-footer {
+        padding: 40px;
+        margin-left: -15px;
+        margin-right: -15px;
+        background: #444;
+        color: #FFF;
+    }
+    .allpage-header a,
+    .allpage-footer a {
+        color: #FFF;
+    }
+
+    .allpage-header .sitenav a {
+        display: block;
+        padding-bottom: 10px;
+    }
+
+    .maincolumn {
+        padding: 40px;
+    }
+    .asidecolumn {
+        padding: 30px 40px;
+        background: #eee;
+    }
+
+    .sitelogo {
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .sitenav {
+        padding-top: 10px;
+        padding-bottom: 10px
+    }
+    .sitenav ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .sitenav h4 {
+        margin-bottom: 10px;
+    }
+
+    .asidecolumn .sitenav {
+        min-width: 160px;
+    }
+    .promotion {
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .promotion figure,
+    .promotion h4 {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    a {
+        color: #0D7AF3;
+    }
+    </style>
+</head>
+<body>
+    <div class="allpage container-fluid">
+        <header class="allpage-header">
+            <nav class="sitenav">
+                <ul class="row row-center-sm row-bottom-xs">
+                    <li class="col-xs-12 col-sm-shrink"><h1 class="sitelogo">SITELOGO</h1></li>
+                    <li class="col-xs-shrink col-first-sm"><a href="#">About</a></li>
+                    <li class="col-xs-shrink col-first-sm"><a href="#">Features</a></li>
+                    <li class="col-xs-shrink col-first-sm"><a href="#">Blog</a></li>
+                    <li class="col-xs-shrink col-last-sm"><a href="#">Portfolio</a></li>
+                    <li class="col-xs-shrink col-last-sm"><a href="#">Shop</a></li>
+                    <li class="col-xs-shrink col-last-sm"><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="allpage-body row">
+            <article class="col-xs-12 col-sm maincolumn">
+                <h1>The Night Sky</h1>
+                <p>Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.</p>
+
+                <figure>
+                    <img src="https://placeimg.com/640/480/any" alt="" />
+                    <figcaption>random image for sample</figcaption>
+                </figure>
+
+                <p>So it is critically important that you get just the right telescope for where you are and what your star gazing preferences are. To start with, let’s discuss the three major kinds of telescopes and then lay down some “Telescope 101” concepts to increase your chances that you will buy the right thing.</p>
+                <p>The three primary types of telescopes that the amateur astronomer might buy are the Refractor, the Reflector and the Schmidt Cassegrain telescope. The first two are named for the kind of lens that is used. It is pretty easy to see that the lens is the heart of the telescope so the kind that you will use will determine the success of your use of that telescope.</p>
+                <p>The refractor lens is the simplest because it uses a convex lens to focus the light on the eyepiece. So the lens bends outwards for this purpose. The refractor telescope’s strength is in viewing planets. The reflector’s strength is in seeing more distant objects and the lens is concave or bends in. It uses mirrors to focus the image that you eventually see. The final type, the Schmidt Cassegrain telescope is the most complex and accomplishes the goals of both but it uses an involved system of mirrors to capture the image you want to see.</p>
+                <p>So to select just the right kind of telescope, your objectives in using the telescope are important. To really understand the strengths and weaknesses not only of the lenses and telescope design but also in how the telescope performs in various star gazing situations, it is best to do some homework up front and get exposure to the different kinds. So before you make your first purchase…</p>
+
+            </article>
+            <aside class="col-xs-12 col-sm-3 col-first-xs col-first-lg asidecolumn">
+                <div class="row row-between-xs row-end-sm">
+                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                        <h4><a href="#">CODING</a></h4>
+                        <ul class="sitenav-catalog">
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">HTML</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">Techniques</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                        <h4><a href="#">DESIGN</a></h4>
+                        <ul class="sitenav-catalog">
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Responsive</a></li>
+                            <li><a href="#">Typography</a></li>
+                            <li><a href="#">Inspiration</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                        <h4><a href="#">MOBILE</a></h4>
+                        <ul class="sitenav-catalog">
+                            <li><a href="#">iPhone &amp; iPad</a></li>
+                            <li><a href="#">Android</a></li>
+                            <li><a href="#">Design Patterns</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                        <h4><a href="#">GRAPHICS</a></h4>
+                        <ul class="sitenav-catalog">
+                            <li><a href="#">Photoshop</a></li>
+                            <li><a href="#">Fireworks</a></li>
+                            <li><a href="#">Wallpapers</a></li>
+                            <li><a href="#">Freebies</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                        <h4><a href="#">UX DESIGN</a></h4>
+                        <ul class="sitenav-catalog">
+                            <li><a href="#">Usability</a></li>
+                            <li><a href="#">User Experience</a></li>
+                            <li><a href="#">UI Design</a></li>
+                            <li><a href="#">E-Commerce</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                        <h4><a href="#">WORDPRESS</a></h4>
+                        <ul class="sitenav-catalog">
+                            <li><a href="#">Essentials</a></li>
+                            <li><a href="#">Techniques</a></li>
+                            <li><a href="#">Plugins</a></li>
+                            <li><a href="#">Themes</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+            <aside class="col-xs-12 col-md-3 asidecolumn">
+                <h3>More Articles</h3>
+                <div class="row">
+                    <article class="promotion col-xs-12 col-sm-4 col-md-12">
+                        <figure class="promotion-img">
+                            <a href="#"><img src="https://placeimg.com/300/200/any" alt="" /></a>
+                        </figure>
+                        <div class="promotion-descr">
+                            <h4><a href="#">The Amazing Hubble</a></h4>
+                            <p>If you are a serious astronomy fanatic like a lot of us are, you can probably remember that one event in childhood that started you along this exciting hobby. </p>
+                        </div>
+                    </article>
+                    <article class="promotion col-xs-12 col-sm-4 col-md-12">
+                        <figure class="promotion-img">
+                            <a href="#"><img src="https://placeimg.com/300/200/any" alt="" /></a>
+                        </figure>
+                        <div class="promotion-descr">
+                            <h4><a href="#">Radio Astronomy</a></h4>
+                            <p>There is a lot of exciting stuff going on in the stars above us that make astronomy so much fun.</p>
+                        </div>
+                    </article>
+                    <article class="promotion col-xs-12 col-sm-4 col-md-12">
+                        <figure class="promotion-img">
+                            <a href="#"><img src="https://placeimg.com/300/200/any" alt="" /></a>
+                        </figure>
+                        <div class="promotion-descr">
+                            <h4><a href="#">Pictures In The Sky</a></h4>
+                            <p>While it was just a TV show, that little speech at the beginning of the original Star Trek show really did do a good job of capturing our feelings about space.</p>
+                        </div>
+                    </article>
+                </div>
+            </aside>
+        </div>
+        <footer class="allpage-footer">
+            <nav class="sitenav">
+                <ul class="row row-center-sm row-bottom-xs">
+                    <li class="col-xs-shrink"><a href="#">Homepage</a></li>
+                    <li class="col-xs-shrink"><a href="#">About</a></li>
+                    <li class="col-xs-shrink"><a href="#">Features</a></li>
+                    <li class="col-xs-shrink"><a href="#">Blog</a></li>
+                    <li class="col-xs-shrink"><a href="#">Portfolio</a></li>
+                    <li class="col-xs-shrink"><a href="#">Shop</a></li>
+                    <li class="col-xs-shrink"><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
