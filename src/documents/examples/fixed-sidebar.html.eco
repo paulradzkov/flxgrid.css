@@ -83,7 +83,7 @@ title: Fixed sidebar
                 <p>Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.</p>
 
                 <figure>
-                    <img src="https://placeimg.com/640/480/any" alt="" />
+                    <img src="<%- @getUrl('/img/sample/placeimg_640_480_tech-4.jpg')%>" alt="" />
                     <figcaption>random image for sample</figcaption>
                 </figure>
 

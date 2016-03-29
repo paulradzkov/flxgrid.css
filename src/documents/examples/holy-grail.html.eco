@@ -95,8 +95,14 @@ title: The Holy Grail layout
     }
 
     .asidecolumn .sitenav {
-        min-width: 160px;
+        font-size: 14px;
+        min-width: 140px;
     }
+
+    .asidecolumn h4 {
+        font-size: 16px;
+    }
+
     .promotion {
         margin-bottom: 20px;
         overflow: hidden;
@@ -134,7 +140,7 @@ title: The Holy Grail layout
                 <p>Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.</p>
 
                 <figure>
-                    <img src="https://placeimg.com/640/480/any" alt="" />
+                    <img src="<%- @getUrl('/img/sample/placeimg_640_480_nature-2.jpg') %>" alt="" />
                     <figcaption>random image for sample</figcaption>
                 </figure>
 
@@ -145,8 +151,8 @@ title: The Holy Grail layout
 
             </article>
             <aside class="col-xs-12 col-sm-3 col-first-xs col-first-lg asidecolumn">
-                <div class="row row-between-xs row-end-sm">
-                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                <div class="row row-end-sm">
+                    <nav class="sitenav col-xs-shrink">
                         <h4><a href="#">CODING</a></h4>
                         <ul class="sitenav-catalog">
                             <li><a href="#">CSS</a></li>
@@ -155,7 +161,7 @@ title: The Holy Grail layout
                             <li><a href="#">Techniques</a></li>
                         </ul>
                     </nav>
-                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                    <nav class="sitenav col-xs-shrink">
                         <h4><a href="#">DESIGN</a></h4>
                         <ul class="sitenav-catalog">
                             <li><a href="#">Web Design</a></li>
@@ -164,7 +170,7 @@ title: The Holy Grail layout
                             <li><a href="#">Inspiration</a></li>
                         </ul>
                     </nav>
-                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                    <nav class="sitenav col-xs-shrink">
                         <h4><a href="#">MOBILE</a></h4>
                         <ul class="sitenav-catalog">
                             <li><a href="#">iPhone &amp; iPad</a></li>
@@ -172,7 +178,7 @@ title: The Holy Grail layout
                             <li><a href="#">Design Patterns</a></li>
                         </ul>
                     </nav>
-                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                    <nav class="sitenav col-xs-shrink">
                         <h4><a href="#">GRAPHICS</a></h4>
                         <ul class="sitenav-catalog">
                             <li><a href="#">Photoshop</a></li>
@@ -181,7 +187,7 @@ title: The Holy Grail layout
                             <li><a href="#">Freebies</a></li>
                         </ul>
                     </nav>
-                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                    <nav class="sitenav col-xs-shrink">
                         <h4><a href="#">UX DESIGN</a></h4>
                         <ul class="sitenav-catalog">
                             <li><a href="#">Usability</a></li>
@@ -190,7 +196,7 @@ title: The Holy Grail layout
                             <li><a href="#">E-Commerce</a></li>
                         </ul>
                     </nav>
-                    <nav class="sitenav col-xs-4 col-sm-shrink">
+                    <nav class="sitenav col-xs-shrink">
                         <h4><a href="#">WORDPRESS</a></h4>
                         <ul class="sitenav-catalog">
                             <li><a href="#">Essentials</a></li>
@@ -206,7 +212,7 @@ title: The Holy Grail layout
                 <div class="row">
                     <article class="promotion col-xs-12 col-sm-4 col-md-12">
                         <figure class="promotion-img">
-                            <a href="#"><img src="https://placeimg.com/300/200/any" alt="" /></a>
+                            <a href="#"><img src="<%- @getUrl('/img/sample/placeimg_300_200_arch-1.jpg') %>" alt="" /></a>
                         </figure>
                         <div class="promotion-descr">
                             <h4><a href="#">The Amazing Hubble</a></h4>
@@ -215,7 +221,7 @@ title: The Holy Grail layout
                     </article>
                     <article class="promotion col-xs-12 col-sm-4 col-md-12">
                         <figure class="promotion-img">
-                            <a href="#"><img src="https://placeimg.com/300/200/any" alt="" /></a>
+                            <a href="#"><img src="<%- @getUrl('/img/sample/placeimg_300_200_arch-2.jpg') %>" alt="" /></a>
                         </figure>
                         <div class="promotion-descr">
                             <h4><a href="#">Radio Astronomy</a></h4>
@@ -224,7 +230,7 @@ title: The Holy Grail layout
                     </article>
                     <article class="promotion col-xs-12 col-sm-4 col-md-12">
                         <figure class="promotion-img">
-                            <a href="#"><img src="https://placeimg.com/300/200/any" alt="" /></a>
+                            <a href="#"><img src="<%- @getUrl('/img/sample/placeimg_300_200_arch-3.jpg') %>" alt="" /></a>
                         </figure>
                         <div class="promotion-descr">
                             <h4><a href="#">Pictures In The Sky</a></h4>
