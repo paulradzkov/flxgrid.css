@@ -18,12 +18,12 @@ module.exports = (grunt) ->
 		imagemin:
 			src:
 				options:
-					optimizationLevel: 3,
+					optimizationLevel: 3
 				files: [
-					expand: true,
-					cwd: 'src/files/img/',
-					src: ['**/*.{png,jpg,jpeg,gif}'],
-					dest: 'src/files/img/'
+					expand: true
+					cwd: './src/raw/img/'
+					src: ['**/*.{png,jpg,jpeg,gif}']
+					dest: './src/raw/img/'
 				]
 
 		# clean out dir

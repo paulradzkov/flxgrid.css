@@ -140,7 +140,7 @@ title: The Holy Grail layout
                 <p>Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.</p>
 
                 <figure>
-                    <img src="<%- @getUrl('/img/sample/placeimg_640_480_nature-2.jpg') %>" alt="" />
+                    <img src="<%- @getUrl('/img/placeimg_640_480_nature-2.jpg') %>" alt="" />
                     <figcaption>random image for sample</figcaption>
                 </figure>
 
@@ -212,7 +212,7 @@ title: The Holy Grail layout
                 <div class="row">
                     <article class="promotion col-xs-12 col-sm-4 col-md-12">
                         <figure class="promotion-img">
-                            <a href="#"><img src="<%- @getUrl('/img/sample/placeimg_300_200_arch-1.jpg') %>" alt="" /></a>
+                            <a href="#"><img src="<%- @getUrl('/img/placeimg_300_200_arch-4.jpg') %>" alt="" /></a>
                         </figure>
                         <div class="promotion-descr">
                             <h4><a href="#">The Amazing Hubble</a></h4>
@@ -221,7 +221,7 @@ title: The Holy Grail layout
                     </article>
                     <article class="promotion col-xs-12 col-sm-4 col-md-12">
                         <figure class="promotion-img">
-                            <a href="#"><img src="<%- @getUrl('/img/sample/placeimg_300_200_arch-2.jpg') %>" alt="" /></a>
+                            <a href="#"><img src="<%- @getUrl('/img/placeimg_300_200_arch-2.jpg') %>" alt="" /></a>
                         </figure>
                         <div class="promotion-descr">
                             <h4><a href="#">Radio Astronomy</a></h4>
@@ -230,7 +230,7 @@ title: The Holy Grail layout
                     </article>
                     <article class="promotion col-xs-12 col-sm-4 col-md-12">
                         <figure class="promotion-img">
-                            <a href="#"><img src="<%- @getUrl('/img/sample/placeimg_300_200_arch-3.jpg') %>" alt="" /></a>
+                            <a href="#"><img src="<%- @getUrl('/img/placeimg_300_200_tech-4.jpg') %>" alt="" /></a>
                         </figure>
                         <div class="promotion-descr">
                             <h4><a href="#">Pictures In The Sky</a></h4>
