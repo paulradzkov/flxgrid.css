@@ -94,8 +94,8 @@ title: Layout examples
             url: '<%- @getUrl("/examples/holy-grail/")%>'
           },
           {
-            label: 'Android',
-            url: 'https://www.android.com/'
+            label: 'Split Screen',
+            url: '<%- @getUrl("/examples/splitscreen/")%>'
           },
           {
             label: 'Pesto',

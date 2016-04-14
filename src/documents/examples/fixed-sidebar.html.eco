@@ -27,6 +27,8 @@ title: Fixed sidebar
         html,
         body {
             min-height: 100vh;
+            background: #FFF;
+            color: #293B49;
         }
 
         .allpage {
@@ -53,10 +55,13 @@ title: Fixed sidebar
         }
         .asidecolumn {
             padding: 30px 40px;
-            background: #eee;
+            background: #3D6272;
             min-width: 240px;
+            color: #FFF;
         }
-
+        .asidecolumn a {
+            color: #FFF;
+        }
         .sitelogo {
             font-size: 24px;
             margin: 0;
@@ -73,49 +78,64 @@ title: Fixed sidebar
             margin-top: 0;
             margin-bottom: 0;
         }
+        @media screen and (min-width: 768px) {
+
+            .fixed-md {
+                position: fixed;
+                width: 240px;
+                height: 100vh;
+                margin: -30px -40px;
+                padding: 30px 40px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="allpage container-fluid">
         <div class="allpage-body row">
             <article class="col-xs-12 col-sm maincolumn">
-                <h1>The Night Sky</h1>
-                <p>Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.</p>
-
                 <figure>
-                    <img src="<%- @getUrl('/img/placeimg_640_480_tech-4.jpg')%>" alt="" />
-                    <figcaption>random image for sample</figcaption>
+                    <div class="row row-bottom-xs">
+                        <div class="col-xs"><img src="<%- @getUrl('/img/noun_36924_cc.svg')%>" alt=""></div>
+                        <div class="col-xs"><img src="<%- @getUrl('/img/noun_317934_cc.svg')%>" alt=""></div>
+                        <div class="col-xs"><img src="<%- @getUrl('/img/noun_269598_cc.svg')%>" alt=""></div>
+                    </div>
                 </figure>
-
-                <p>So it is critically important that you get just the right telescope for where you are and what your star gazing preferences are. To start with, let’s discuss the three major kinds of telescopes and then lay down some “Telescope 101” concepts to increase your chances that you will buy the right thing.</p>
-                <p>The three primary types of telescopes that the amateur astronomer might buy are the Refractor, the Reflector and the Schmidt Cassegrain telescope. The first two are named for the kind of lens that is used. It is pretty easy to see that the lens is the heart of the telescope so the kind that you will use will determine the success of your use of that telescope.</p>
-                <p>The refractor lens is the simplest because it uses a convex lens to focus the light on the eyepiece. So the lens bends outwards for this purpose. The refractor telescope’s strength is in viewing planets. The reflector’s strength is in seeing more distant objects and the lens is concave or bends in. It uses mirrors to focus the image that you eventually see. The final type, the Schmidt Cassegrain telescope is the most complex and accomplishes the goals of both but it uses an involved system of mirrors to capture the image you want to see.</p>
-                <p>So to select just the right kind of telescope, your objectives in using the telescope are important. To really understand the strengths and weaknesses not only of the lenses and telescope design but also in how the telescope performs in various star gazing situations, it is best to do some homework up front and get exposure to the different kinds. So before you make your first purchase…</p>
-                <ul>
-                    <li>
-                        <p>Above all, establish a relationship with a reputable telescope shop that employs people who know their stuff. If you buy your telescope at a Wal-Mart or department store, the odds you will get the right thing are remote.</p>
-                    </li>
-                    <li>
-                        <p>Pick the brains of the experts. If you are not already active in an astronomy society or club, the sales people at the telescope store will be able to guide you to the active societies in your area. Once you have connections with people who have bought telescopes, you can get advice about what works and what to avoid that is more valid than anything you will get from a web article or a salesperson at Wal-Mart.</p>
-                    </li>
-                    <li>
-                        <p>Try before you buy. This is another advantage of going on some field trips with the astronomy club. You can set aside some quality hours with people who know telescopes and have their rigs set up to examine their equipment, learn the key technical aspects, and try them out before you sink money in your own set up.</p>
-                    </li>
-                </ul>
-                <p>There are other considerations to factor into your final purchase decision. How mobile must your telescope be? The tripod or other accessory decisions will change significantly with a telescope that will live on your deck versus one that you plan to take to many remote locations. Along those lines, how difficult is the set up and break down? How complex is the telescope and will you have trouble with maintenance? Network to get the answers to these and other questions. If you do your homework like this, you will find just the right telescope for this next big step in the evolution of your passion for astronomy.</p>
+                <section class="content">
+                    <h1>The Night Sky</h1>
+                    <p>Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.</p>
+                    <p>So it is critically important that you get just the right telescope for where you are and what your star gazing preferences are. To start with, let’s discuss the three major kinds of telescopes and then lay down some “Telescope 101” concepts to increase your chances that you will buy the right thing.</p>
+                    <p>The three primary types of telescopes that the amateur astronomer might buy are the Refractor, the Reflector and the Schmidt Cassegrain telescope. The first two are named for the kind of lens that is used. It is pretty easy to see that the lens is the heart of the telescope so the kind that you will use will determine the success of your use of that telescope.</p>
+                    <p>The refractor lens is the simplest because it uses a convex lens to focus the light on the eyepiece. So the lens bends outwards for this purpose. The refractor telescope’s strength is in viewing planets. The reflector’s strength is in seeing more distant objects and the lens is concave or bends in. It uses mirrors to focus the image that you eventually see. The final type, the Schmidt Cassegrain telescope is the most complex and accomplishes the goals of both but it uses an involved system of mirrors to capture the image you want to see.</p>
+                    <p>So to select just the right kind of telescope, your objectives in using the telescope are important. To really understand the strengths and weaknesses not only of the lenses and telescope design but also in how the telescope performs in various star gazing situations, it is best to do some homework up front and get exposure to the different kinds. So before you make your first purchase…</p>
+                    <ul>
+                        <li>
+                            <p>Above all, establish a relationship with a reputable telescope shop that employs people who know their stuff. If you buy your telescope at a Wal-Mart or department store, the odds you will get the right thing are remote.</p>
+                        </li>
+                        <li>
+                            <p>Pick the brains of the experts. If you are not already active in an astronomy society or club, the sales people at the telescope store will be able to guide you to the active societies in your area. Once you have connections with people who have bought telescopes, you can get advice about what works and what to avoid that is more valid than anything you will get from a web article or a salesperson at Wal-Mart.</p>
+                        </li>
+                        <li>
+                            <p>Try before you buy. This is another advantage of going on some field trips with the astronomy club. You can set aside some quality hours with people who know telescopes and have their rigs set up to examine their equipment, learn the key technical aspects, and try them out before you sink money in your own set up.</p>
+                        </li>
+                    </ul>
+                    <p>There are other considerations to factor into your final purchase decision. How mobile must your telescope be? The tripod or other accessory decisions will change significantly with a telescope that will live on your deck versus one that you plan to take to many remote locations. Along those lines, how difficult is the set up and break down? How complex is the telescope and will you have trouble with maintenance? Network to get the answers to these and other questions. If you do your homework like this, you will find just the right telescope for this next big step in the evolution of your passion for astronomy.</p>
+                </section>
 
             </article>
             <aside class="col-xs-12 col-sm-min col-first-xs col-last-sm col-first-lg asidecolumn">
-                <div class="row row-between-xs">
-                    <h1 class="col-xs-shrink col-sm-12 sitelogo">SITELOGO</h1>
-                    <nav class="col-xs-shrink col-sm-12 sitenav">
-                        <ul class="row">
-                            <li class="col-xs-shrink col-sm-12"><a href="#">Home</a></li>
-                            <li class="col-xs-shrink col-sm-12"><a href="#">Blog</a></li>
-                            <li class="col-xs-shrink col-sm-12"><a href="#">Shop</a></li>
-                            <li class="col-xs-shrink col-sm-12"><a href="#">Contacts</a></li>
-                        </ul>
-                    </nav>
+                <div class="fixed-md">
+                    <div class="row row-between-xs">
+                        <h1 class="col-xs-shrink col-sm-12 sitelogo">ASTRONOMY</h1>
+                        <nav class="col-xs-shrink col-sm-12 sitenav">
+                            <ul class="row">
+                                <li class="col-xs-shrink col-sm-12"><a href="#">Home</a></li>
+                                <li class="col-xs-shrink col-sm-12"><a href="#">Blog</a></li>
+                                <li class="col-xs-shrink col-sm-12"><a href="#">Shop</a></li>
+                                <li class="col-xs-shrink col-sm-12"><a href="#">Contacts</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </aside>
         </div>
