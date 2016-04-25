@@ -33,15 +33,6 @@ title: Fixed sidebar
 
         .allpage {
             min-height: 100vh;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -webkit-flex-direction: column;
-                -ms-flex-direction: column;
-                    flex-direction: column;
         }
         .allpage-body {
             -webkit-box-flex: 1;
@@ -91,7 +82,7 @@ title: Fixed sidebar
     </style>
 </head>
 <body>
-    <div class="allpage container-fluid">
+    <div class="allpage container-fluid col-flex-xs">
         <div class="allpage-body row">
             <article class="col-xs-12 col-sm maincolumn">
                 <figure>

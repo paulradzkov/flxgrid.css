@@ -17,6 +17,7 @@
             <li class="col-xs-12 col-sm-12"><strong>Layout examples</strong></li>
             <li class="col-xs-min col-sm-12"><a href="<%= @getUrl('/examples/') %>" target="_blank">All examples</a></li>
             <li class="col-xs-min col-sm-12"><a href="<%= @getUrl('/examples/fixed-sidebar/') %>" target="_blank">Fixed-width sidebar</a></li>
+            <li class="col-xs-min col-sm-12"><a href="<%= @getUrl('/examples/sticky-footer/') %>" target="_blank">Sticky Footer</a></li>
             <li class="col-xs-min col-sm-12"><a href="<%= @getUrl('/examples/holy-grail/') %>" target="_blank">Holy Grail layout</a></li>
             <li class="col-xs-min col-sm-12"><a href="<%= @getUrl('/examples/splitscreen/') %>" target="_blank">Split screen</a></li>
         </ul>

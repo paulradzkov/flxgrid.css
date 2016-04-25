@@ -90,16 +90,16 @@ title: Layout examples
             url: '<%- @getUrl("/examples/fixed-sidebar/")%>'
           },
           {
-            label: 'The Holy Grail layout',
-            url: '<%- @getUrl("/examples/holy-grail/")%>'
-          },
-          {
             label: 'Split Screen',
             url: '<%- @getUrl("/examples/splitscreen/")%>'
           },
           {
-            label: 'Pesto',
-            url: 'https://material-adaptive.firebaseapp.com/pesto/app/dist.html'
+            label: 'Sticky Footer',
+            url: '<%- @getUrl("/examples/sticky-footer/")%>'
+          },
+          {
+            label: 'The Holy Grail layout',
+            url: '<%- @getUrl("/examples/holy-grail/")%>'
           },
           {
             label: 'Shrine',

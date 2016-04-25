@@ -31,16 +31,6 @@ title: The Holy Grail layout
 
     .allpage {
         min-height: 100vh;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
-                flex-order: -1;
     }
     .allpage-body {
         -webkit-box-flex: 1;
@@ -120,7 +110,7 @@ title: The Holy Grail layout
     </style>
 </head>
 <body>
-    <div class="allpage container-fluid">
+    <div class="allpage container-fluid col-flex-xs">
         <header class="allpage-header">
             <nav class="sitenav">
                 <ul class="row row-center-sm row-bottom-xs">
