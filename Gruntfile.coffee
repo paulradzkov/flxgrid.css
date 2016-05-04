@@ -32,12 +32,6 @@ module.exports = (grunt) ->
 				force: true
 			out: ['<%= docpad.out %>']
 
-		copy:
-			bower:
-				files: [
-					'out/vendor/normalize.css/normalize.css':'bower_components/normalize.css/normalize.css',
-				]
-
 		# compile less
 		less:
 			development:
