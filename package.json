@@ -15,6 +15,12 @@
     "layout"
   ],
   "dependencies": {
+  },
+  "main": "node_modules/.bin/docpad-server",
+  "scripts": {
+    "start": "node_modules/.bin/docpad-server"
+  },
+  "devDependencies": {
     "docpad": "~6.78.4",
     "docpad-plugin-cleanurls": "~2.8.1",
     "docpad-plugin-eco": "~2.1.0",
@@ -24,13 +30,7 @@
     "docpad-plugin-less": "~2.4.1",
     "docpad-plugin-marked": "~2.3.0",
     "docpad-plugin-partials": "~2.9.2",
-    "docpad-plugin-raw": "~2.4.1"
-  },
-  "main": "node_modules/.bin/docpad-server",
-  "scripts": {
-    "start": "node_modules/.bin/docpad-server"
-  },
-  "devDependencies": {
+    "docpad-plugin-raw": "~2.4.1",
     "autoprefixer": "^6.3.4",
     "bettertext.css": "^1.0.1",
     "bower": "^1.4.1",
