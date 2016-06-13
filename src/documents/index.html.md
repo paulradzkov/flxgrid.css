@@ -51,7 +51,7 @@ Responsive modifiers enable specifying different column sizes, offsets, alignmen
 
 Containers are optional. They needed to compensate negative margin of a row.
 
-`.container` — has max-width on breakpoints from **sm**, **md**, **lg**. On **xs** size it utilize  all available width.  
+`.container` — has max-width on breakpoints from **sm**, **md**, **lg**. On **xs** size it utilize  all available width.
 `.container-fluid` — doesn't have max-width. It use full width on all breakpoint.
 
 ## Auto width columns
@@ -123,8 +123,8 @@ You can use auto-width columns together with width-specified columns.
 
 ### `.col-xs-shrink`
 
-You can use together fluid-width and shrink-width columns.  
-`.col-xs-shrink` will fit its width to content width without wrapping.  
+You can use together fluid-width and shrink-width columns.
+`.col-xs-shrink` will fit its width to content width without wrapping.
 And when free space is not enough `.col-xs-shrink` drops under previous column.
 
 <div class="row">
@@ -150,28 +150,22 @@ And when free space is not enough `.col-xs-shrink` drops under previous column.
         auto width
     </div>
     <div class="col-xs-shrink">
-        <div class="box-row">
-            some words here
-        </div>
+        some words here
     </div>
 </div>
 <div class="row">
     <div class="col-xs">
-        <div class="box-row">
-            auto
-        </div>
+        auto
     </div>
     <div class="col-xs-shrink">
-        <div class="box-row">
-            a little bit more content here. col-xs-shrink will try fit it in one line {...}
-        </div>
+        a little bit more content here. col-xs-shrink will try fit it in one line {...}
     </div>
 </div>
 ```
 
 ### `.col-xs-min`
 
-You can use together fluid-width and fixed width columns.  
+You can use together fluid-width and fixed width columns.
 `.col-xs-min` requires explicit **min-width** on this element.
 
 <div class="row">
@@ -189,9 +183,7 @@ You can use together fluid-width and fixed width columns.
         auto
     </div>
     <div class="col-xs-min" style="min-width: 200px">
-        <div class="box-row">
-            200px
-        </div>
+        200px
     </div>
 </div>
 ```
@@ -213,30 +205,6 @@ You can use together fluid-width and fixed width columns.
     </div>
 </div>
 ```
-
-## Nested Grids
-
-Nest grids inside grids inside grids.  
-Use `.container-fluid` for nested rows to compensate negative margins.
-
-<div class="row" style="background: #eee;">
-    <div class="col-xs-8">
-        <div class="box-row">
-            <p>8</p>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div class="box-row">6</div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="box-row">6</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 ## Alignment
 
@@ -585,6 +553,206 @@ You can use more than one `.col-first-` and `.col-last-` in a row.
     <div class="col-xs-2">4</div>
     <div class="col-xs-2">5</div>
     <div class="col-xs-2">6</div>
+</div>
+```
+
+## Flex columns
+
+You can apply vertical flex to any column of the grid.
+
+### `.col-flex-xs` and `.flex-grow`
+
+To create column with vertical flex axis (`flex-direction: column`) apply `.col-flex-xs` to any column as modifier or any tag.
+
+If you want one or more childs to grow vertically inside flex column, use `.flex-grow-xs`. It just add `flex-grow: 1` on that element.
+
+<div class="row">
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row">1</div>
+        <div class="box-row flex-grow-xs">2</div>
+        <div class="box-row">3</div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row">1</div>
+        <div class="box-row">2</div>
+        <div class="box-row">3</div>
+        <div class="box-row">4</div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row">1</div>
+        <div class="box-row flex-grow-xs">2</div>
+    </div>
+</div>
+
+```html
+<div class="row">
+    <div class="col-xs-4 col-flex-xs">
+        <div class="...">1</div>
+        <div class="... flex-grow-xs">2</div>
+        <div class="...">3</div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="...">1</div>
+        <div class="...">2</div>
+        <div class="...">3</div>
+        <div class="...">4</div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="...">1</div>
+        <div class="... flex-grow-xs">2</div>
+    </div>
+</div>
+```
+
+For example to create sticky footer you can apply `.col-flex-xs` to `body` to create vertical flex layout.
+And apply `.flex-grow-xs` to cental part of layout to make it fill all empty vertical space.
+Don't forget to add `min-height: 100vh` to body.
+That will push footer to the bottom of viewport.
+
+```html
+...
+<body class="col-flex-xs" style="min-height: 100vh">
+    <header>header</header>
+    <article class="flex-grow-xs">body</article>
+    <footer>footer</footer>
+</body>
+...
+```
+
+# Nested Grids
+
+Nest grids inside grids inside grids.
+Use `.container-fluid > .row` for nested rows to have gutters before first and after last nested column.
+
+<div class="row">
+    <div class="col-xs-8">
+        <div class="box-row">
+            <p>8</p>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="box-row">6</div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="box-row">6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row flex-grow-xs">4</div>
+    </div>
+</div>
+
+```html
+<div class="row">
+    <div class="col-xs-8">
+        <div class="...">
+            <p>8</p>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="...">6</div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="...">6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="flex-grow-xs ...">4</div>
+    </div>
+</div>
+```
+
+Or use just `.row` to avoid gutters on the sides of nested row.
+
+<div class="row">
+    <div class="col-xs-8">
+        <div class="box-row">8</div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="box-row">6</div>
+            </div>
+            <div class="col-xs-6">
+                <div class="box-row">6</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row flex-grow-xs">4</div>
+    </div>
+</div>
+
+```html
+<div class="row">
+    <div class="col-xs-8">
+        <div class="...">8</div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="...">6</div>
+            </div>
+            <div class="col-xs-6">
+                <div class="...">6</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="flex-grow-xs ...">4</div>
+    </div>
+</div>
+```
+
+
+### Horizontal — vertical — horizontal nested grids
+
+If you put `.row` on the same tag as any column, row will erase columns gutters (left and right padding).
+That was made to simplify nesting complex grids: you may need a few less wrappers in some cases.
+
+<div class="row">
+    <div class="col-xs-8 col-flex-xs">
+        <div class="box-row">1</div>
+        <div class="flex-grow-xs row">
+            <div class="col-xs-6 col-flex-xs">
+                <div class="box-row flex-grow-xs">1</div>
+            </div>
+            <div class="col-xs-6 col-flex-xs">
+                <div class="box-row flex-grow-xs">2</div>
+            </div>
+        </div>
+        <div class="box-row">3</div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row">1</div>
+        <div class="box-row">2</div>
+        <div class="box-row">3</div>
+        <div class="box-row">4</div>
+    </div>
+</div>
+
+```html
+<div class="row">
+    <div class="col-xs-8 col-flex-xs">
+        <div class="...">1</div>
+        <div class="flex-grow-xs row">
+            <div class="col-xs-6 col-flex-xs">
+                <div class="flex-grow-xs ...">1</div>
+            </div>
+            <div class="col-xs-6 col-flex-xs">
+                <div class="flex-grow-xs ...">2</div>
+            </div>
+        </div>
+        <div class="...">3</div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="...">1</div>
+        <div class="...">2</div>
+        <div class="...">3</div>
+        <div class="...">4</div>
+    </div>
 </div>
 ```
 

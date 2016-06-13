@@ -155,6 +155,12 @@
         }
     }
 
+    .grow-modifiers(@class) {
+        .flex-grow-@{class} {
+            flex-grow: 1;
+        }
+    }
+
     // Create breakpoints
     .responsive(@index: @m) when (@index > 1) and (@m = (@n + 1)) {
         .responsive((@index - 1)); // next iteration
@@ -169,6 +175,8 @@
             .row-modifiers(@current-class);
 
             .make-grid(@current-class);
+
+            .grow-modifiers(@current-class);
         }
     }
 
@@ -201,6 +209,11 @@
         flex-wrap: wrap;
         margin-right: @gutter-compensation;
         margin-left: @gutter-compensation;
+
+        &[class*="col-"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
     // Render modifiers
@@ -208,6 +221,9 @@
 
     // Render default state before first breakpoint
     .make-grid(@first-suffix);
+
+    // Render default state before first breakpoint
+    .grow-modifiers(@first-suffix);
 
     // Render mediaqueries with breakpoints
     .responsive();

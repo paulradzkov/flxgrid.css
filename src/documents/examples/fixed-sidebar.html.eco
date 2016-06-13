@@ -34,41 +34,41 @@ title: Fixed sidebar
         .allpage {
             min-height: 100vh;
         }
-        .allpage-body {
-            -webkit-box-flex: 1;
-            -webkit-flex-grow: 1;
-                -ms-flex-positive: 1;
-                    flex-grow: 1;
-        }
 
         .maincolumn {
             padding: 40px;
         }
+
         .asidecolumn {
             padding: 30px 40px;
             background: #3D6272;
             min-width: 240px;
             color: #FFF;
         }
+
         .asidecolumn a {
             color: #FFF;
         }
+
         .sitelogo {
             font-size: 24px;
             margin: 0;
             padding-top: 10px;
             padding-bottom: 10px
         }
+
         .sitenav {
             padding-top: 10px;
             padding-bottom: 10px
         }
+
         .sitenav ul {
             list-style-type: none;
             padding: 0;
             margin-top: 0;
             margin-bottom: 0;
         }
+
         @media screen and (min-width: 768px) {
 
             .fixed-md {
@@ -83,7 +83,7 @@ title: Fixed sidebar
 </head>
 <body>
     <div class="allpage container-fluid col-flex-xs">
-        <div class="allpage-body row">
+        <div class="allpage-body flex-grow-xs row">
             <article class="col-xs-12 col-sm maincolumn">
                 <figure>
                     <div class="row row-bottom-xs">

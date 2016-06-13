@@ -53,10 +53,6 @@ title: Sticky Footer
 
         .allpage-body {
             padding: 40px;
-            -webkit-box-flex: 1;
-            -webkit-flex-grow: 1;
-                -ms-flex-positive: 1;
-                    flex-grow: 1;
         }
 
         .allpage-footer {
@@ -103,7 +99,7 @@ title: Sticky Footer
                 </div>
             </div>
         </header>
-        <article class="allpage-body">
+        <article class="allpage-body flex-grow-xs">
             <div class="content-width">
                 <h1>What S Your Passion</h1>
                 <p>If you’re looking for the latest in wireless headphones for your enjoyment and private listening, whether to TV, stereo, home entertainment such as theater, iTunes or Ipod, you might do well to look at the highly recommended Sennheiser RS 130 wireless headphones.</p>

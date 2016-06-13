@@ -39,9 +39,6 @@ module.exports = (grunt) ->
 					sourceMap: true
 				files: [
 					"out/grid.css": "grid.less"
-				]
-			production:
-				files: [
 					"grid.css": "grid.less"
 				]
 			site:

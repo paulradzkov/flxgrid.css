@@ -7,11 +7,12 @@
             <li class="col-xs-min col-sm-12"><a href="#auto-width-columns">Auto width columns</a></li>
             <li class="col-xs-min col-sm-12"><a href="#shrink-columns">Shrink columns</a></li>
             <li class="col-xs-min col-sm-12"><a href="#offsets">Offsets</a></li>
-            <li class="col-xs-min col-sm-12"><a href="#nested-grids">Nested Grids</a></li>
             <li class="col-xs-min col-sm-12"><a href="#alignment">Alignment</a></li>
             <li class="col-xs-min col-sm-12"><a href="#distribution">Distribution</a></li>
             <li class="col-xs-min col-sm-12"><a href="#reordering">Reordering</a></li>
             <li class="col-xs-min col-sm-12"><a href="#reversing">Reversing</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#flex-columns">Flex Columns</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#nested-grids">Nested Grids</a></li>
         </ul>
         <ul class="row">
             <li class="col-xs-12 col-sm-12"><strong>Layout examples</strong></li>
