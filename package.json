@@ -1,11 +1,11 @@
 {
   "name": "flxgrid.css",
-  "version": "0.1.0",
-  "description": "Flexbox grid",
+  "version": "1.0.0",
+  "description": "Flexbox grid system",
   "author": "Paul Radzkov <radzkov@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paulradzkov/grid.git"
+    "url": "https://github.com/paulradzkov/flxgrid.git"
   },
   "keywords": [
     "grid",
