@@ -1,7 +1,8 @@
 {
-  "name": "grid.css",
+  "name": "flxgrid.css",
   "version": "0.1.0",
   "description": "Flexbox grid",
+  "author": "Paul Radzkov <radzkov@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/paulradzkov/grid.git"
@@ -16,10 +17,7 @@
   ],
   "dependencies": {
   },
-  "main": "node_modules/.bin/docpad-server",
-  "scripts": {
-    "start": "node_modules/.bin/docpad-server"
-  },
+  "main": "flxgrid.less",
   "devDependencies": {
     "docpad": "~6.78.4",
     "docpad-plugin-cleanurls": "~2.8.1",

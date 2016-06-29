@@ -38,8 +38,8 @@ module.exports = (grunt) ->
 				options:
 					sourceMap: true
 				files: [
-					"out/grid.css": "grid.less"
-					"grid.css": "grid.less"
+					"out/flxgrid.css": "flxgrid.less"
+					"flxgrid.css": "flxgrid.less"
 				]
 			site:
 				options:
@@ -66,7 +66,7 @@ module.exports = (grunt) ->
 			site:
 				src: 'out/*.css'
 			dist:
-				src: 'grid.css'
+				src: 'flxgrid.css'
 
 		# track changes
 		watch:
@@ -76,7 +76,7 @@ module.exports = (grunt) ->
 					livereload: true
 			less:
 				files: [
-					'grid.less'
+					'flxgrid.less'
 					'src/raw/css/template.less'
 				]
 				tasks: [
@@ -113,7 +113,7 @@ module.exports = (grunt) ->
 			less:
 				options:
 					title: 'LESS'
-					message: 'grid.css compiled'
+					message: 'flxgrid.css compiled'
 
 	# measures the time each task takes
 	require('time-grunt')(grunt);
