@@ -1,0 +1,41 @@
+{
+  "name": "flxgrid.css",
+  "homepage": "https://github.com/paulradzkov/flxgrid.css",
+  "description": "Configurable flexbox grid system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulradzkov/flxgrid.css.git"
+  },
+  "keywords": [
+      "grid",
+      "css",
+      "less",
+      "layout",
+      "flexbox",
+      "responsive"
+    ],
+  "authors": [
+    "Paul Radzkov <radzkov@gmail.com> (http://paulradzkov.com)"
+  ],
+  "license": "MIT",
+  "main": [
+    "flxgrid.less",
+    "flxgrid.css",
+    "flxgrid.css.map"
+  ],
+  "ignore": [
+    "**/.*",
+    "src",
+    "out",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "component.json",
+    "package.json",
+    "docpad.coffee",
+    "Gruntfile.coffee"
+  ]
+}
