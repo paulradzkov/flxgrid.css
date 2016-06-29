@@ -66,7 +66,7 @@ Redefining gutter-width and breakpoints:
 ```less
 @import (less) "pathto/flxgrid.less";
 
-.gutter-settings() {
+.grid-settings() {
     @gutter-width: 60px;
 
     // media breakpoints
