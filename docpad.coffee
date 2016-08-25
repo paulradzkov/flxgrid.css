@@ -14,7 +14,7 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "//paulradzkov.github.io/grid"
+			url: "//paulradzkov.github.io/flxgrid.css"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
