@@ -7,9 +7,9 @@
 
     // media breakpoints (default: as on bootstrap)
     @breakpoints:
-        ~"min-width: 768px",
-        ~"min-width: 992px",
-        ~"min-width: 1200px";
+        ~"(min-width: 768px)",
+        ~"(min-width: 992px)",
+        ~"(min-width: 1200px)";
 
     // max-width of containers according breakpoints
     @container-maw:
@@ -165,8 +165,9 @@
     .responsive(@index: @m) when (@index > 1) and (@m = (@n + 1)) {
         .responsive((@index - 1)); // next iteration
         @current-class: extract(@suffixes, @index);
+        @current-breakpoint: extract(@breakpoints, (@index - 1));
 
-        @media (extract(@breakpoints, (@index - 1))) {
+        @media @current-breakpoint {
 
             .container {
                 max-width: extract(@container-maw, (@index - 1));
