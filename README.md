@@ -1,5 +1,7 @@
 # flxgrid.css — flexbox grid system
 
+[![npm version](https://badge.fury.io/js/flxgrid.css.svg)](http://badge.fury.io/js/flxgrid.css)
+
 Makes grid classes for given number of columns (default: 12) and breakpoints (default: xs, sm, md, lg).
 
 ## Usage in HTML
