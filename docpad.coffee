@@ -29,7 +29,7 @@ docpadConfig = {
 
 			# The website description (for SEO)
 			description: """
-				Flexbox grid
+				Customizable Flexbox grid build on Less
 				"""
 
 			# The website keywords (for SEO) separated by commas
