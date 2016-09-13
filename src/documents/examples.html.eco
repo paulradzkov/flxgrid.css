@@ -100,10 +100,6 @@ title: Layout examples
           {
             label: 'The Holy Grail layout',
             url: '<%- @getUrl("/examples/holy-grail/")%>'
-          },
-          {
-            label: 'Shrine',
-            url: 'https://material-adaptive.firebaseapp.com/shrine/app/dist.html'
           }
         ],
         windowBreakpoints: [

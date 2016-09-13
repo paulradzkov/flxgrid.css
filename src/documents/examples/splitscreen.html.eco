@@ -17,7 +17,7 @@ title: Split Screen
 
     <link rel="stylesheet" href="<%= @getUrl('/vendor/normalize/normalize.css') %>">
     <link rel="stylesheet" href="<%= @getUrl('/vendor/bettertext/bettertext.css') %>">
-    <link rel="stylesheet" href="<%= @getUrl('/grid.css') %>">
+    <link rel="stylesheet" href="<%= @getUrl('/flxgrid.css') %>">
     <style media="screen">
         * {
             box-sizing: border-box;
