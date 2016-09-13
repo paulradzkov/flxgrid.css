@@ -797,13 +797,13 @@ Default settings:
 Running with default parameters:
 
 ```less
-@import (less) "uicomponents/grid.less";
+@import (less) "uicomponents/flxgrid.less";
 ```
 
 Redefining gutter-width and breakpoints:
 
 ```less
-@import (less) "uicomponents/grid.less";
+@import (less) "uicomponents/flxgrid.less";
 
 .gutter-settings() {
     @gutter-width: 60px;
