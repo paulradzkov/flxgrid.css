@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+
+    <!-- Site Properities -->
+    <title>Sticky Footer / Grid</title>
+    <meta name="description" content="Flexbox grid" />
+    <meta name="keywords" content="grid, css, less, flexbox, responsive, layout, " />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <link rel="stylesheet" href="//paulradzkov.github.io/flxgrid.css/vendor/normalize/normalize.css">
+    <link rel="stylesheet" href="//paulradzkov.github.io/flxgrid.css/vendor/bettertext/bettertext.css">
+    <link rel="stylesheet" href="//paulradzkov.github.io/flxgrid.css/flxgrid.css">
+    <style media="screen">
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            min-height: 100vh;
+            background: #FFF;
+            color: #F55B51;
+        }
+
+        .allpage {
+            min-height: 100vh;
+        }
+
+        .allpage-header {
+            padding: 20px;
+            background: #F55B51;
+            color: #FFF;
+            text-transform: uppercase;
+        }
+
+        .allpage-header ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .allpage-header a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        .allpage-body {
+            padding: 40px;
+        }
+
+        .allpage-footer {
+            border-top: 2px solid;
+            padding: 20px 20px 40px;
+            font-size: .8em;
+        }
+
+        .allpage-footer a {
+            display: inline-block;
+            padding-right: 2em;
+            color: #F55B51;
+            text-decoration: none;
+        }
+
+        .content-width {
+            max-width: 50rem;
+            margin: auto;
+        }
+
+        .logo {
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="allpage col-flex-xs">
+        <header class="allpage-header">
+            <div class="container-fluid">
+                <div class="row row-between-xs row-middle-xs">
+                    <div class="col-xs-shrink">
+                        <img class="logo" src="//paulradzkov.github.io/flxgrid.css/img/noun_429208_cc.svg" alt="" />
+                    </div>
+                    <div class="col-xs-shrink">
+                        <nav class="container-fluid">
+                            <ul class="row">
+                                <li class="col-xs-shrink "><a href="#">Home</a></li>
+                                <li class="col-xs-shrink "><a href="#">About</a></li>
+                                <li class="col-xs-shrink "><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <article class="allpage-body flex-grow-xs">
+            <div class="content-width">
+                <h1>What S Your Passion</h1>
+                <p>If you’re looking for the latest in wireless headphones for your enjoyment and private listening, whether to TV, stereo, home entertainment such as theater, iTunes or Ipod, you might do well to look at the highly recommended Sennheiser RS 130 wireless headphones.</p>
+                <p>These state of the art wireless headphones provide an advanced communication via FM radio frequency. The result is clear sound with no background noise or static and nearly 500 feet of free movement. The headphones have terrific surround sound effects and weigh less than ten ounces. They are ergonomically designed to provide hours of comfort.</p>
+                <p>The features of the Sennheiser RS130 wireless headphones include a base station for the headphones that is attractive and stores the headphones whre they are not in use and also charges the batteries. Batteries are NiMH type, and their single charge keeps them going for 22 hours of your listening enjoyment. The wireless headphones base station has a 900 MHz high performance transmission, also wireless, that delivers a playback that is very impressive in its high fidelity capability. Its transmitters use Sennheiser’s customized system of intelligent automated tuning. This seeks and then chooses the best of three channels from base to headset that are available for delivery of sound to the wireless headphones.</p>
+            </div>
+        </article>
+        <footer class="allpage-footer">
+            <div class="container-fluid">
+                <div class="row row-between-xs content-width">
+                    <nav class="col-xs-shrink">
+                        <a href="#">Terms &amp; Conditions</a>
+                        <a href="#">Privacy Policy</a>
+                    </nav>
+                    <div class="col-xs-shrink">
+                        MUSIC 2016
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

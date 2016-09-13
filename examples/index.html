@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+
+    <!-- Site Properities -->
+    <title>Layout examples / Grid</title>
+    <meta name="description" content="Flexbox grid" />
+    <meta name="keywords" content="grid, css, less, flexbox, responsive, layout, " />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <!-- DocPad Meta -->
+    <meta name="generator" content="DocPad v6.78.6" />
+
+    <!-- DocPad Styles + Our Own -->
+    
+
+    <link rel="stylesheet" href="//paulradzkov.github.io/flxgrid.css/flxgrid.css">
+    <link rel="stylesheet" href="//paulradzkov.github.io/flxgrid.css/css/template.css">
+
+    <script src="//paulradzkov.github.io/flxgrid.css/resizer/webcomponents-lite.min.js"></script>
+    <link rel="import" href="//paulradzkov.github.io/flxgrid.css/resizer/components-dev.html">
+</head>
+<body>
+   <script>
+    window.addEventListener('WebComponentsReady', function(e) {
+      var resizer = new DeviceResizer({
+        defaultURL: '//paulradzkov.github.io/flxgrid.css/examples/fixed-sidebar/',
+        defaultWindowWidth: 840,
+        defaultHandsetWidth: 360,
+        defaulrDevice: 'window',
+        deviceProfiles: [
+          {
+            device: 'window',
+            size: 1600
+          },
+          {
+            device: 'window',
+            size: 1440
+          },
+          {
+            device: 'window',
+            size: 1280
+          },
+          {
+            aspect: '4x3',
+            device: 'handset',
+            label: 'tablet',
+            landscape: true,
+            size: 1024
+          },
+          {
+            device: 'window',
+            size: 960
+          },
+          {
+            device: 'window',
+            size: 840
+          },
+          {
+            aspect: '4x3',
+            device: 'handset',
+            label: 'tablet',
+            landscape: false,
+            size: 720,
+          },
+          {
+            device: 'window',
+            size: 600
+          },
+          {
+            aspect: '16x9',
+            device: 'handset',
+            label: 'phone',
+            landscape: true,
+            size: 600
+          },
+          {
+            device: 'window',
+            size: 480
+          },
+          {
+            aspect: '3x2',
+            device: 'handset',
+            label: 'phone',
+            landscape: true,
+            size: 480
+          },
+          {
+            aspect: '16x9',
+            device: 'handset',
+            label: 'phone',
+            size: 360
+          },
+          {
+            device: 'window',
+            size: 320
+          },
+          {
+            aspect: '3x2',
+            device: 'handset',
+            label: 'phone',
+            size: 320
+          }
+        ],
+        suggestedSites: [
+          {
+            label: 'Fixed width sidebar',
+            url: '//paulradzkov.github.io/flxgrid.css/examples/fixed-sidebar/'
+          },
+          {
+            label: 'Split Screen',
+            url: '//paulradzkov.github.io/flxgrid.css/examples/splitscreen/'
+          },
+          {
+            label: 'Sticky Footer',
+            url: '//paulradzkov.github.io/flxgrid.css/examples/sticky-footer/'
+          },
+          {
+            label: 'The Holy Grail layout',
+            url: '//paulradzkov.github.io/flxgrid.css/examples/holy-grail/'
+          }
+        ],
+        windowBreakpoints: [
+          {
+            label: 'xxsmall',
+            size: 320
+          },
+          {
+            label: 'xsmall',
+            size: 480
+          },
+          {
+            label: 'small',
+            size: 600
+          },
+          {
+            label: 'medium',
+            size: 960
+          },
+          {
+            label: 'large',
+            size: 1280
+          },
+          {
+            label: 'xlarge',
+            size: Number.MAX_SAFE_INTEGER
+          }
+        ]
+      });
+      document.getElementById('resizerblock').appendChild(resizer);
+    });
+</script>
+    <div id="resizerblock" class="resizer-container"></div>
+</body>
+</html>

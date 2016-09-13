@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+
+    <!-- Site Properities -->
+    <title>Flexbox Grid / Grid</title>
+    <meta name="description" content="Flexbox grid" />
+    <meta name="keywords" content="grid, css, less, flexbox, responsive, layout, " />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <!-- DocPad Meta -->
+    <meta name="generator" content="DocPad v6.78.6" />
+
+    <!-- DocPad Styles + Our Own -->
+    
+
+    <link rel="stylesheet" href="//paulradzkov.github.io/flxgrid.css/flxgrid.css">
+    <link rel="stylesheet" href="//paulradzkov.github.io/flxgrid.css/css/template.css">
+</head>
+<body>
+    <div id="top" class="allpage container-fluid">
+        <div class="allpage-body row">
+            <article class="col-xs-12 col-sm maincolumn">
+                <h1 id="flexbox-grid">Flexbox Grid</h1>
+<div class="row">
+    <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-8 col-lg-10">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1">
+        <div class="box-row"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs-12 col-sm-9 col-md-10 col-lg-11">
+        <div class="box-row"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-10 col-sm-6 col-md-8 col-lg-10">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs-2 col-sm-6 col-md-4 col-lg-2">
+        <div class="box-row"></div>
+    </div>
+</div>
+
+<h2 id="basic-syntax">Basic syntax</h2>
+<p>Minimal syntax is <code>.row</code> → <code>.col-xs-*</code> → content.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-12 col-sm-6 col-md-4"</span>&gt;</span>
+        content
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>There are 4 responsive breakpoints (<strong>xs</strong>, <strong>sm</strong>, <strong>md</strong>, <strong>lg</strong>) and 12 columns by default.</p>
+<p>Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at <strong>xs</strong>, <strong>sm</strong>, <strong>md</strong> &amp; <strong>lg</strong> viewport widths.</p>
+<p>Containers are optional. They needed to compensate negative margin of a row.</p>
+<p><code>.container</code> — has max-width on breakpoints from <strong>sm</strong>, <strong>md</strong>, <strong>lg</strong>. On <strong>xs</strong> size it utilize  all available width.
+<code>.container-fluid</code> — doesn&#39;t have max-width. It use full width on all breakpoint.</p>
+<h2 id="auto-width-columns">Auto width columns</h2>
+<h3 id="-col-xs-col-sm-col-md-col-lg-"><code>.col-xs</code> <code>.col-sm</code> <code>.col-md</code> <code>.col-lg</code></h3>
+<p>Add any number of auto sizing columns to a row. Let the grid figure it out.</p>
+<div class="row">
+    <div class="col-xs">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs">
+        <div class="box-row"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs">
+        <div class="box-row"></div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs"</span>&gt;</span>
+        auto
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs"</span>&gt;</span>
+        auto
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>You can use auto-width columns together with width-specified columns.</p>
+<div class="row">
+    <div class="col-xs-1">
+        <div class="box-row">1</div>
+    </div>
+    <div class="col-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="col-xs">
+        <div class="box-row">auto</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-1"</span>&gt;</span>
+        col-xs-1
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs"</span>&gt;</span>
+        auto
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs"</span>&gt;</span>
+        auto
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h2 id="shrink-columns">Shrink columns</h2>
+<h3 id="-col-xs-shrink-"><code>.col-xs-shrink</code></h3>
+<p>You can use together fluid-width and shrink-width columns.
+<code>.col-xs-shrink</code> will fit its width to content width without wrapping.
+And when free space is not enough <code>.col-xs-shrink</code> drops under previous column.</p>
+<div class="row">
+    <div class="col-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="col-xs-shrink">
+        <div class="box-row">some words here</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="col-xs-shrink">
+        <div class="box-row">a little bit more content here. «col-xs-shrink» will try fit it in one line. And when free space is not enough «col-xs-shrink» drops under previous column</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs"</span>&gt;</span>
+        auto width
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-shrink"</span>&gt;</span>
+        some words here
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs"</span>&gt;</span>
+        auto
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-shrink"</span>&gt;</span>
+        a little bit more content here. col-xs-shrink will try fit it in one line {...}
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 id="-col-xs-min-"><code>.col-xs-min</code></h3>
+<p>You can use together fluid-width and fixed width columns.
+<code>.col-xs-min</code> requires explicit <strong>min-width</strong> on this element.</p>
+<div class="row">
+    <div class="col-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="col-xs-min" style="min-width: 200px">
+        <div class="box-row">200px</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs"</span>&gt;</span>
+        auto
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-min"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"min-width: 200px"</span>&gt;</span>
+        200px
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h2 id="offsets">Offsets</h2>
+<h3 id="-col-xs-offset-"><code>.col-xs-offset-</code></h3>
+<div class="row" style="background: #eee;">
+    <div class="col-xs-offset-2 col-xs-4">
+        <div class="box-row">offset-2</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-offset-2 col-xs-4"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h2 id="alignment">Alignment</h2>
+<p>Add classes to align elements to the start or end of a row as well as the top, bottom, or center of a column.</p>
+<h3 id="-row-start-"><code>.row-start-</code></h3>
+<div class="row row-start-xs" style="background: #eee;">
+    <div class="col-xs-6">
+        <div class="box-row"></div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row row-start-xs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 id="-row-center-"><code>.row-center-</code></h3>
+<div class="row row-center-xs" style="background: #eee;">
+    <div class="col-xs-6">
+        <div class="box-row"></div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row row-center-xs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 id="-row-end-"><code>.row-end-</code></h3>
+<div class="row row-end-xs" style="background: #eee;">
+    <div class="col-xs-6">
+        <div class="box-row"></div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row row-end-xs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>Here is an example of using the modifiers in conjunction to achieve different alignment at different viewport sizes.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row row-center-xs row-end-sm row-start-lg"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box"</span>&gt;</span>
+            All together now
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 id="-row-top-"><code>.row-top-</code></h3>
+<div class="row row-top-xs" style="background: #eee;">
+    <div class="col-xs-6">
+        <div class="box-row">
+        1<br>
+        2<br>
+        3
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="box-row">1</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row row-top-xs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+        ...
+        ...
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 id="-row-middle-"><code>.row-middle-</code></h3>
+<div class="row row-middle-xs" style="background: #eee;">
+    <div class="col-xs-6">
+        <div class="box-row">
+        1<br>
+        2<br>
+        3
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="box-row">1</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row row-middle-xs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+        ...
+        ...
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 id="-row-bottom-"><code>.row-bottom-</code></h3>
+<div class="row row-bottom-xs" style="background: #eee;">
+    <div class="col-xs-6">
+        <div class="box-row">
+        1<br>
+        2<br>
+        3
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="box-row">1</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row row-bottom-xs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+        ...
+        ...
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h2 id="distribution">Distribution</h2>
+<p>Add classes to distribute the contents of a row or column.</p>
+<h3 id="-row-around-"><code>.row-around-</code></h3>
+<div class="row row-around-xs" style="background: #eee;">
+    <div class="col-xs-2">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row"></div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row row-around-xs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 id="-row-between-"><code>.row-between-</code></h3>
+<div class="row row-between-xs" style="background: #eee;">
+    <div class="col-xs-2">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row"></div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row"></div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row row-between-xs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h2 id="reordering">Reordering</h2>
+<p>Add classes to any column to reorder.</p>
+<h3 id="-col-first-"><code>.col-first-</code></h3>
+<div class="row">
+    <div class="col-xs-2">
+        <div class="box-row">1</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">2</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">3</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">4</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">5</div>
+    </div>
+    <div class="col-xs-2 col-first-xs">
+        <div class="box-row">6</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2 col-first-xs"</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 id="-col-last-"><code>.col-last-</code></h3>
+<div class="row">
+    <div class="col-xs-2 col-last-xs">
+        <div class="box-row">1</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">2</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">3</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">4</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">5</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">6</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2 col-last-xs"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>You can use more than one <code>.col-first-</code> and <code>.col-last-</code> in a row.</p>
+<div class="row">
+    <div class="col-xs-2 col-last-xs">
+        <div class="box-row">1</div>
+    </div>
+    <div class="col-xs-2 col-last-xs">
+        <div class="box-row">2</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">3</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">4</div>
+    </div>
+    <div class="col-xs-2 col-first-xs">
+        <div class="box-row">5</div>
+    </div>
+    <div class="col-xs-2 col-first-xs">
+        <div class="box-row">6</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2 col-last-xs"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2 col-last-xs"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2 col-first-xs"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2 col-first-xs"</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h2 id="reversing">Reversing</h2>
+<h3 id="-row-reverse-"><code>.row-reverse-</code></h3>
+<div class="row row-reverse-xs">
+    <div class="col-xs-2">
+        <div class="box-row">1</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">2</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">3</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">4</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">5</div>
+    </div>
+    <div class="col-xs-2">
+        <div class="box-row">6</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row row-reverse-xs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-2"</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h2 id="flex-columns">Flex columns</h2>
+<p>You can apply vertical flex to any column of the grid.</p>
+<h3 id="-col-flex-xs-and-flex-grow-"><code>.col-flex-xs</code> and <code>.flex-grow</code></h3>
+<p>To create column with vertical flex axis (<code>flex-direction: column</code>) apply <code>.col-flex-xs</code> to any column as modifier or any tag.</p>
+<p>If you want one or more childs to grow vertically inside flex column, use <code>.flex-grow-xs</code>. It just add <code>flex-grow: 1</code> on that element.</p>
+<div class="row">
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row">1</div>
+        <div class="box-row flex-grow-xs">2</div>
+        <div class="box-row">3</div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row">1</div>
+        <div class="box-row">2</div>
+        <div class="box-row">3</div>
+        <div class="box-row">4</div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row">1</div>
+        <div class="box-row flex-grow-xs">2</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-4 col-flex-xs"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"... flex-grow-xs"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-4 col-flex-xs"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-4 col-flex-xs"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"... flex-grow-xs"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>For example to create sticky footer you can apply <code>.col-flex-xs</code> to <code>body</code> to create vertical flex layout.
+And apply <code>.flex-grow-xs</code> to cental part of layout to make it fill all empty vertical space.
+Don&#39;t forget to add <code>min-height: 100vh</code> to body.
+That will push footer to the bottom of viewport.</p>
+<pre class="highlight"><code class="hljs xml">...
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-flex-xs"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"min-height: 100vh"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">header</span>&gt;</span>header<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-grow-xs"</span>&gt;</span>body<span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">footer</span>&gt;</span>footer<span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+...
+</code></pre>
+<h1 id="nested-grids">Nested Grids</h1>
+<p>Nest grids inside grids inside grids.
+Use <code>.container-fluid &gt; .row</code> for nested rows to have gutters before first and after last nested column.</p>
+<div class="row">
+    <div class="col-xs-8">
+        <div class="box-row">
+            <p>8</p>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="box-row">6</div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="box-row">6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row flex-grow-xs">4</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container-fluid"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-4 col-flex-xs"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-grow-xs ..."</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>Or use just <code>.row</code> to avoid gutters on the sides of nested row.</p>
+<div class="row">
+    <div class="col-xs-8">
+        <div class="box-row">8</div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="box-row">6</div>
+            </div>
+            <div class="col-xs-6">
+                <div class="box-row">6</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row flex-grow-xs">4</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-4 col-flex-xs"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-grow-xs ..."</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 id="horizontal-vertical-horizontal-nested-grids">Horizontal — vertical — horizontal nested grids</h3>
+<p>If you put <code>.row</code> on the same tag as any column, row will erase columns gutters (left and right padding).
+That was made to simplify nesting complex grids: you may need a few less wrappers in some cases.</p>
+<div class="row">
+    <div class="col-xs-8 col-flex-xs">
+        <div class="box-row">1</div>
+        <div class="flex-grow-xs row">
+            <div class="col-xs-6 col-flex-xs">
+                <div class="box-row flex-grow-xs">1</div>
+            </div>
+            <div class="col-xs-6 col-flex-xs">
+                <div class="box-row flex-grow-xs">2</div>
+            </div>
+        </div>
+        <div class="box-row">3</div>
+    </div>
+    <div class="col-xs-4 col-flex-xs">
+        <div class="box-row">1</div>
+        <div class="box-row">2</div>
+        <div class="box-row">3</div>
+        <div class="box-row">4</div>
+    </div>
+</div>
+
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-8 col-flex-xs"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-grow-xs row"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6 col-flex-xs"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-grow-xs ..."</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-6 col-flex-xs"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-grow-xs ..."</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-xs-4 col-flex-xs"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"..."</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h1 id="usage-in-less">Usage in LESS</h1>
+<h2 id="default-parameters">Default parameters</h2>
+<p>Component has global mixin with settings named <code>.grid-settings();</code> and global variable <code>grid-render</code> which contains all code.</p>
+<p>Default settings:</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-class">.grid-settings</span>() {
+
+    <span class="hljs-comment">// settings</span>
+    <span class="hljs-variable">@grid-columns:</span> <span class="hljs-number">12</span>;   <span class="hljs-comment">// number of columns</span>
+    <span class="hljs-variable">@gutter-width:</span> <span class="hljs-number">30px</span>; <span class="hljs-comment">// gap between columns</span>
+
+    <span class="hljs-comment">// media breakpoints (default: as on bootstrap)</span>
+    <span class="hljs-variable">@breakpoints:</span>
+        <span class="hljs-string">~"(min-width: 768px)"</span>,
+        <span class="hljs-string">~"(min-width: 992px)"</span>,
+        <span class="hljs-string">~"(min-width: 1200px)"</span>;
+
+    <span class="hljs-comment">// max-width of containers according breakpoints</span>
+    <span class="hljs-variable">@container-maw:</span>
+        <span class="hljs-number">750px</span>,
+        <span class="hljs-number">970px</span>,
+        <span class="hljs-number">1170px</span>;
+
+    <span class="hljs-comment">// names for breakpoint suffixes</span>
+    <span class="hljs-variable">@suffixes:</span> xs, sm, md, lg;
+
+    <span class="hljs-comment">// IMPORTANT: suffixes count should be bigger than breakpoints count by 1</span>
+    <span class="hljs-comment">// suffixes-count = breakpoints-count + 1</span>
+
+}
+</code></pre>
+<h2 id="customizing">Customizing</h2>
+<p>Running with default parameters:</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-at_rule">@import</span> (less) <span class="hljs-string">"uicomponents/grid.less"</span>;
+</code></pre>
+<p>Redefining gutter-width and breakpoints:</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-at_rule">@import</span> (less) <span class="hljs-string">"uicomponents/grid.less"</span>;
+
+<span class="hljs-class">.gutter-settings</span>() {
+    <span class="hljs-variable">@gutter-width:</span> <span class="hljs-number">60px</span>;
+
+    <span class="hljs-comment">// media breakpoints</span>
+    <span class="hljs-variable">@breakpoints:</span>
+        <span class="hljs-string">~"(min-width: 480px)"</span>,
+        <span class="hljs-string">~"(min-width: 768px)"</span>,
+        <span class="hljs-string">~"(min-width: 992px)"</span>,
+        <span class="hljs-string">~"(min-width: 1200px)"</span>,
+        <span class="hljs-string">~"(min-width: 1600px)"</span>;
+
+    <span class="hljs-comment">// max-width of containers according breakpoints</span>
+    <span class="hljs-variable">@container-maw:</span>
+        <span class="hljs-number">100%</span>,
+        <span class="hljs-number">750px</span>,
+        <span class="hljs-number">970px</span>,
+        <span class="hljs-number">1170px</span>,
+        <span class="hljs-number">1540px</span>;
+
+    <span class="hljs-comment">// names for breakpoint suffixes</span>
+    <span class="hljs-variable">@suffixes:</span> xxs, xs, sm, md, lg, xlg;
+}
+</code></pre>
+
+                <footer class="pagefooter">
+    <div class="row">
+        <div class="col-xs-shrink">
+            Made by <a href="http://paulradzkov.com">Paul Radzkov</a>
+        </div>
+        <div class="col-xs-shrink">
+            <a href="https://github.com/paulradzkov/grid">GitHub</a>
+        </div>
+        <div class="col-xs-shrink">
+            <a href="https://github.com/paulradzkov/grid/issues">Issues</a>
+        </div>
+        <div class="col-xs-shrink" title="Coming soon">
+            Changelog
+        </div>
+    </div>
+</footer>
+
+            </article>
+            <aside class="col-xs-12 col-sm-min col-first-xs col-last-sm asidecolumn">
+                <div class="fixed">
+                    <div class="">
+    <h1 class="sitelogo"><a href="#top">Flexbox Grid</a></h1>
+    <nav class="sitenav">
+        <ul class="row">
+            <li class="col-xs-12 col-sm-12"><strong>Usage in HTML</strong></li>
+            <li class="col-xs-min col-sm-12"><a href="#basic-syntax">Basic syntax</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#auto-width-columns">Auto width columns</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#shrink-columns">Shrink columns</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#offsets">Offsets</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#alignment">Alignment</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#distribution">Distribution</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#reordering">Reordering</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#reversing">Reversing</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#flex-columns">Flex Columns</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#nested-grids">Nested Grids</a></li>
+        </ul>
+        <ul class="row">
+            <li class="col-xs-12 col-sm-12"><strong>Layout examples</strong></li>
+            <li class="col-xs-min col-sm-12"><a href="//paulradzkov.github.io/flxgrid.css/examples/" target="_blank">All examples</a></li>
+            <li class="col-xs-min col-sm-12"><a href="//paulradzkov.github.io/flxgrid.css/examples/fixed-sidebar/" target="_blank">Fixed-width sidebar</a></li>
+            <li class="col-xs-min col-sm-12"><a href="//paulradzkov.github.io/flxgrid.css/examples/sticky-footer/" target="_blank">Sticky Footer</a></li>
+            <li class="col-xs-min col-sm-12"><a href="//paulradzkov.github.io/flxgrid.css/examples/holy-grail/" target="_blank">Holy Grail layout</a></li>
+            <li class="col-xs-min col-sm-12"><a href="//paulradzkov.github.io/flxgrid.css/examples/splitscreen/" target="_blank">Split screen</a></li>
+        </ul>
+        <ul class="row">
+            <li class="col-xs-12 col-sm-12"><strong>Usage in LESS</strong></li>
+            <li class="col-xs-min col-sm-12"><a href="#default-parameters">Default parameters</a></li>
+            <li class="col-xs-min col-sm-12"><a href="#customizing">Customizing</a></li>
+        </ul>
+    </nav>
+</div>
+
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

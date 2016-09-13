@@ -1,0 +1,67 @@
+.links-settings() {
+    //colors
+    @defaulttext:   #000;
+    @link:          #0877db;
+    @visited:       #9108db;
+    @hover:         #2b9aff;
+    @visitedhover:  #bc4df8;
+    @active:        #bc4df8;
+}
+
+@links: {
+
+    a {
+        text-decoration: underline;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+    }
+
+    a:not([class]):link,
+    a:not([class]):link *,
+    a:not([class]):visited,
+    a:not([class]):visited * {
+        transition:
+            color             .3s ease-out,
+            background-color  .3s ease-out,
+            border-color      .3s ease-out,
+            box-shadow        .3s ease-out;
+    }
+
+    a:not([class]):hover,
+    a:not([class]):hover * {
+        transition:
+            color             0s,
+            background-color  0s,
+            border-color      0s,
+            box-shadow        0s;
+    }
+
+    a:link          {color: @link;          text-decoration-color: fadeout(@link,        70%);}
+    a:visited       {color: @visited;       text-decoration-color: fadeout(@visited,     70%);}
+    a:visited:hover {color: @visitedhover;  text-decoration-color: fadeout(@visitedhover,70%);}
+    a:hover         {color: @hover;         text-decoration-color: fadeout(@hover,       70%);}
+    a:active        {color: @active;        text-decoration-color: fadeout(@active,      70%);}
+
+    nav a {
+        text-decoration: none;
+    }
+
+    .links-settings();
+};
+
+@links();
+
+.linked-header {
+    a:link,
+    a:visited {
+        color: @defaulttext;
+    }
+    a:hover {
+        color: @hover;
+    }
+    a:visited:hover {
+        color: @visitedhover;
+    }
+
+    .links-settings();
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+
+    <!-- Site Properities -->
+    <title>Split Screen / Grid</title>
+    <meta name="description" content="Flexbox grid" />
+    <meta name="keywords" content="grid, css, less, flexbox, responsive, layout, " />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <link rel="stylesheet" href="//paulradzkov.github.io/flxgrid.css/vendor/normalize/normalize.css">
+    <link rel="stylesheet" href="//paulradzkov.github.io/flxgrid.css/vendor/bettertext/bettertext.css">
+    <link rel="stylesheet" href="//paulradzkov.github.io/flxgrid.css/flxgrid.css">
+    <style media="screen">
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            min-height: 100vh;
+            background: #FFF;
+            color: #3D343B;
+        }
+
+        .allpage-body {
+            min-height: 100vh;
+        }
+
+        .cover {
+            background: #3D343B;
+            color: #FFF;
+            text-align: center;
+        }
+
+        .cover,
+        .content {
+            padding: 40px;
+            justify-content: center;
+        }
+
+        .content-width {
+            margin: auto;
+        }
+
+        .pagetitle {
+            margin: 20px 0;
+            font-size: 3em;
+            letter-spacing: -.03em;
+        }
+
+        .category {
+            max-width: none;
+            font-size: 1.25em;
+        }
+
+        .author {
+            font-size: .85em;
+            opacity: .8;
+        }
+
+        p {
+            max-width: 40rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="allpage container-fluid">
+        <div class="allpage-body row">
+            <header class="cover col-xs-12 col-md-6 col-flex-xs">
+                <img src="//paulradzkov.github.io/flxgrid.css/img/noun_95676_cc.svg" alt="lemon" />
+                <h1 class="pagetitle">Fact And Truth</h1>
+                <p class="category">Philosophy</p>
+            </header>
+            <article class="content col-xs-12 col-md-6 col-flex-xs">
+                <div class="content-width">
+                    <p>Watching the news the other day, it occurred to me that people who have “words to live by” often begin to attack and even kill others. I thought back to my own angry youth, when I could easily use words to justify violent thoughts which might have become violent actions. Words are tools, and yet it seems that they can be more dangerous than gunpowder.</p>
+                    <p>Imagine two men facing each other, pointing past one another. One is pointing at a tornado that is coming, and the other at a raging fire headed towards them. Each sees their own truth and is angry at the sight of the other’s hand. Each feels that the other’s hand is “wrong.” This may seem silly, but replace the tornado and fire with any modern issues, and the hands with words, and this scene describes how we often try to communicate.</p>
+                    <p>We point past each other with our words, arguing as though we are looking at the same facts and experiences. We want to prove our words are the right ones, instead of learning to look at what the other’s words are pointing at. Words are seductive, and for all their undeniable usefulness, they also can lead us away from understanding when we focus on them, when we make them more important than the truth they are meant to point at.</p>
+                    <p class="author">© 2016 Anonymous</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
