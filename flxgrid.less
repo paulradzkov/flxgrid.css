@@ -3,7 +3,7 @@
 
     // settings
     @grid-columns: 12;   // number of columns
-    @gutter-width: 30px; // gap between columns
+    @gutter-width: 40px; // gap between columns
 
     // media breakpoints (default: as on bootstrap)
     @breakpoints:
@@ -43,18 +43,18 @@
 
     .flex-grid-columns(@class) {
         .col(@index) { // initial
-            @item: ~".col-@{class}-@{index}";
+            @item: ~".flx-cell-@{index}-@{class}";
             .col((@index + 1), @item);
         }
         .col(@index, @list) when (@index =< @grid-columns) { // general
-            @item: ~".col-@{class}-@{index}";
+            @item: ~".flx-cell-@{index}-@{class}";
             .col((@index + 1), ~"@{list}, @{item}");
         }
         .col(@index, @list) when (@index > @grid-columns) { // terminal
             @{list},
-            .col-@{class}-shrink,
-            .col-@{class}-min,
-            .col-@{class} {
+            .flx-cell-shrink-@{class},
+            .flx-cell-min-@{class},
+            .flx-cell-@{class} {
                 box-sizing: border-box;
                 flex: 0 0 auto;
                 padding-right: @half-gutter-width;
@@ -65,14 +65,14 @@
     }
 
     .calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
-        .col-@{class}-@{index} {
+        .flx-cell-@{index}-@{class} {
             flex-basis: percentage((@index / @grid-columns));
             max-width:  percentage((@index / @grid-columns));
         }
     }
 
     .calc-grid-column(@index, @class, @type) when (@type = offset) {
-        .col-@{class}-offset-@{index} {
+        .flx-cell-offset-@{index}-@{class} {
             margin-left: percentage((@index / @grid-columns));
         }
     }
@@ -92,8 +92,8 @@
     }
 
     // Create additional row modifiers
-    .row-modifiers(@class) {
-        .row {
+    .flx-modifiers(@class) {
+        .flx {
             &-reverse-@{class} {
                 flex-direction: row-reverse;
             }
@@ -110,9 +110,10 @@
                 justify-content: flex-end;
             }
 
-            &-top-@{class}    { align-items: flex-start; }
-            &-middle-@{class} { align-items: center; }
-            &-bottom-@{class} { align-items: flex-end; }
+            &-top-@{class}      { align-items: flex-start; }
+            &-middle-@{class}   { align-items: center; }
+            &-bottom-@{class}   { align-items: flex-end; }
+            &-baseline-@{class} { align-items: baseline; }
 
             &-around-@{class}  { justify-content: space-around; }
             &-between-@{class} { justify-content: space-between; }
@@ -122,7 +123,7 @@
     // Create modifiers for columns
     .col-modifiers(@class) {
 
-        .col {
+        .flx-cell {
             &-@{class} {
                 flex-grow: 1;
                 flex-basis: 0%;
@@ -130,14 +131,14 @@
                 min-width: 0;
             }
 
-            &-@{class}-shrink {
+            &-shrink-@{class} {
                 flex-grow: 0;
                 flex-basis: auto;
                 max-width: 100%;
                 min-width: 0;
             }
 
-            &-@{class}-min {
+            &-min-@{class} {
                 flex-grow: 0;
                 flex-basis: 0%;
                 max-width: 100%;
@@ -156,7 +157,7 @@
     }
 
     .grow-modifiers(@class) {
-        .flex-grow-@{class} {
+        .flx-cell-grow-@{class} {
             flex-grow: 1;
         }
     }
@@ -169,11 +170,11 @@
 
         @media @current-breakpoint {
 
-            .container {
+            .flx-container-fixed {
                 max-width: extract(@container-maw, (@index - 1));
             }
 
-            .row-modifiers(@current-class);
+            .flx-modifiers(@current-class);
 
             .make-grid(@current-class);
 
@@ -189,20 +190,19 @@
     .grid-settings();
 
     // Common container
-    .container {
-        margin-right: auto;
-        margin-left: auto;
+    .flx-container {
+        box-sizing: border-box;
+        padding-right: @half-gutter-width;
+        padding-left: @half-gutter-width;
 
-        &-fluid {
+        &-fixed {
             margin-right: auto;
             margin-left: auto;
-            padding-right: @half-gutter-width;
-            padding-left: @half-gutter-width;
         }
     }
 
     // Common row
-    .row {
+    .flx-row {
         box-sizing: border-box;
         display: flex;
         flex: 0 1 auto;
@@ -210,15 +210,20 @@
         flex-wrap: wrap;
         margin-right: @gutter-compensation;
         margin-left: @gutter-compensation;
+    }
 
-        &[class*="col-"] {
-            padding-left: 0;
-            padding-right: 0;
-        }
+    // Common column
+    .flx-col {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 1 auto;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
     }
 
     // Render modifiers
-    .row-modifiers(@first-suffix);
+    .flx-modifiers(@first-suffix);
 
     // Render default state before first breakpoint
     .make-grid(@first-suffix);
