@@ -92,8 +92,8 @@
     }
 
     // Create additional row modifiers
-    .flx-modifiers(@class) {
-        .flx {
+    .flx-row-modifiers(@class) {
+        .flx-row {
             &-reverse-@{class} {
                 flex-direction: row-reverse;
             }
@@ -174,7 +174,7 @@
                 max-width: extract(@container-maw, (@index - 1));
             }
 
-            .flx-modifiers(@current-class);
+            .flx-row-modifiers(@current-class);
 
             .make-grid(@current-class);
 
@@ -223,7 +223,7 @@
     }
 
     // Render modifiers
-    .flx-modifiers(@first-suffix);
+    .flx-row-modifiers(@first-suffix);
 
     // Render default state before first breakpoint
     .make-grid(@first-suffix);
