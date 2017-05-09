@@ -1,0 +1,62 @@
+.classnames {
+    margin: 1.5em 0;
+    white-space: nowrap;
+    border-collapse: collapse;
+}
+
+.classnames td:last-child {
+    white-space: normal;
+}
+
+.classnames td:not(:last-child) {
+    font-family: monospace, monospace;
+}
+
+.classnames th {
+    font-family: monospace, monospace;
+    font-size: 24px;
+    text-align: left;
+}
+.classnames td,
+.classnames th {
+    border-left: 2px solid #fff;
+    vertical-align: baseline;
+}
+.classnames td {
+    padding-left: .75em;
+}
+
+.classnames-common th:nth-child(2),
+.classnames-common td:nth-child(2) {
+    color: rgba(208, 1, 27, 1);
+    background: rgba(208, 1, 27, 0.1);
+}
+.classnames-common th:nth-child(3),
+.classnames-common td:nth-child(3) {
+    color: rgba(141, 69, 238, 1);
+    background: rgba(141, 69, 238, 0.1);
+}
+.classnames-common th:nth-child(4),
+.classnames-common td:nth-child(4) {
+    color: rgba(51, 145, 16, 1);
+    background: rgba(51, 145, 16, 0.1);
+}
+
+.classnames-exclusions th:nth-child(2) {
+    color: rgba(208, 1, 27, 1);
+}
+.classnames-exclusions th:nth-child(3),
+.classnames-exclusions td:nth-child(3) {
+    color: rgba(39, 113, 198, 1);
+    background: rgba(39, 113, 198, 0.1);
+}
+.classnames-exclusions th:nth-child(4) {
+    color: rgba(141, 69, 238, 1);
+}
+.classnames-exclusions th:nth-child(5) {
+    width: 4em;
+    color: rgba(51, 145, 16, 1);
+}
+.classnames td.empty {
+    background: none;
+}

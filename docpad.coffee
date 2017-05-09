@@ -22,7 +22,7 @@ docpadConfig = {
 			]
 
 			# The default title of our website
-			title: "Grid"
+			title: "flxgrid.css"
 
 			# Author name used in copyrights and meta data
 			author: "Павел Радьков"

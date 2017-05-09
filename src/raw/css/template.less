@@ -1,10 +1,17 @@
 @import (less) "../../../node_modules/normalize.css/normalize.css";
 @import (less) "../../../node_modules/bettertext.css/bettertext.less";
+@import (less) "../../../node_modules/links.less/links.less";
+@import (less) "../../../node_modules/space.less/space.less";
 @import (less) "github.css";
-@import (less) "_links.less";
+@import (less) "_classnames.less";
 
 * {
     box-sizing: border-box;
+
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
 }
 
 html,
@@ -101,8 +108,4 @@ body {
     margin-top: 5vw;
     font-size: 0.9em;
     color: #999;
-
-    a:not(:hover) {
-        color: #999;
-    }
 }
