@@ -51,22 +51,18 @@
 }
 .flx-row-top-xs {
   -ms-flex-align: start;
-      -ms-grid-row-align: flex-start;
       align-items: flex-start;
 }
 .flx-row-middle-xs {
   -ms-flex-align: center;
-      -ms-grid-row-align: center;
       align-items: center;
 }
 .flx-row-bottom-xs {
   -ms-flex-align: end;
-      -ms-grid-row-align: flex-end;
       align-items: flex-end;
 }
 .flx-row-baseline-xs {
   -ms-flex-align: baseline;
-      -ms-grid-row-align: baseline;
       align-items: baseline;
 }
 .flx-row-around-xs {
@@ -252,22 +248,18 @@
   }
   .flx-row-top-sm {
     -ms-flex-align: start;
-        -ms-grid-row-align: flex-start;
         align-items: flex-start;
   }
   .flx-row-middle-sm {
     -ms-flex-align: center;
-        -ms-grid-row-align: center;
         align-items: center;
   }
   .flx-row-bottom-sm {
     -ms-flex-align: end;
-        -ms-grid-row-align: flex-end;
         align-items: flex-end;
   }
   .flx-row-baseline-sm {
     -ms-flex-align: baseline;
-        -ms-grid-row-align: baseline;
         align-items: baseline;
   }
   .flx-row-around-sm {
@@ -454,22 +446,18 @@
   }
   .flx-row-top-md {
     -ms-flex-align: start;
-        -ms-grid-row-align: flex-start;
         align-items: flex-start;
   }
   .flx-row-middle-md {
     -ms-flex-align: center;
-        -ms-grid-row-align: center;
         align-items: center;
   }
   .flx-row-bottom-md {
     -ms-flex-align: end;
-        -ms-grid-row-align: flex-end;
         align-items: flex-end;
   }
   .flx-row-baseline-md {
     -ms-flex-align: baseline;
-        -ms-grid-row-align: baseline;
         align-items: baseline;
   }
   .flx-row-around-md {
@@ -656,22 +644,18 @@
   }
   .flx-row-top-lg {
     -ms-flex-align: start;
-        -ms-grid-row-align: flex-start;
         align-items: flex-start;
   }
   .flx-row-middle-lg {
     -ms-flex-align: center;
-        -ms-grid-row-align: center;
         align-items: center;
   }
   .flx-row-bottom-lg {
     -ms-flex-align: end;
-        -ms-grid-row-align: flex-end;
         align-items: flex-end;
   }
   .flx-row-baseline-lg {
     -ms-flex-align: baseline;
-        -ms-grid-row-align: baseline;
         align-items: baseline;
   }
   .flx-row-around-lg {
