@@ -64,35 +64,34 @@
         .cell(1); // kickstart it
     }
 
-    .calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
+    .render-cell-width(@index, @class) when (@index > 0) {
+        .render-cell-width((@index - 1), @class); // next iteration
+
         .flx-cell-@{index}-@{class} {
             flex-basis: percentage((@index / @grid-columns));
             max-width:  percentage((@index / @grid-columns));
         }
     }
 
-    .calc-grid-column(@index, @class, @type) when (@type = offset) {
+    // for offsets we must have .flx-cell-offset-0 to erase offset
+    .render-offsets(@index, @class) when (@index >= 0) {
+        .render-offsets((@index - 1), @class); // next iteration
+
         .flx-cell-offset-@{index}-@{class} {
             margin-left: percentage((@index / @grid-columns));
         }
     }
 
-    // Basic looping in LESS
-    .loop-grid-columns(@index, @class, @type) when (@index >= 0) {
-        .loop-grid-columns((@index - 1), @class, @type); // next iteration
-        .calc-grid-column(@index, @class, @type);
-    }
-
     // Create grid for specific class
     .render-grid(@class) {
         .render-grid-cells-common(@class);
-        .loop-grid-columns(@grid-columns, @class, width);
-        .loop-grid-columns(@grid-columns, @class, offset);
+        .render-cell-width(@grid-columns, @class);
+        .render-offsets(@grid-columns, @class);
         .render-cell-modifiers(@class);
     }
 
     // Create additional row modifiers
-    .render-row-modifiers(@class) {
+    .render-flex-modifiers(@class) {
         .flx-row {
             &-reverse-@{class} { flex-direction: row-reverse; }
 
@@ -143,12 +142,10 @@
                 flex-direction: column;
                 align-items: stretch;
             }
-        }
-    }
 
-    .grow-modifiers(@class) {
-        .flx-cell-grow-@{class} {
-            flex-grow: 1;
+            &-grow-@{class} {
+                flex-grow: 1;
+            }
         }
     }
 
@@ -164,11 +161,8 @@
                 max-width: extract(@container-maw, (@index - 1));
             }
 
-            .render-row-modifiers(@current-class);
-
+            .render-flex-modifiers(@current-class);
             .render-grid(@current-class);
-
-            .grow-modifiers(@current-class);
         }
     }
 
@@ -213,13 +207,10 @@
     }
 
     // Render modifiers
-    .render-row-modifiers(@first-suffix);
+    .render-flex-modifiers(@first-suffix);
 
     // Render default state before first breakpoint
     .render-grid(@first-suffix);
-
-    // Render default state before first breakpoint
-    .grow-modifiers(@first-suffix);
 
     // Render mediaqueries with breakpoints
     .responsive();
