@@ -41,16 +41,16 @@
     // Used to generate the correct number of grid classes
     // given any value of `@grid-columns`.
 
-    .flex-grid-columns(@class) {
-        .col(@index) { // initial
+    .render-grid-cells-common(@class) {
+        .cell(@index) { // initial
             @item: ~".flx-cell-@{index}-@{class}";
-            .col((@index + 1), @item);
+            .cell((@index + 1), @item);
         }
-        .col(@index, @list) when (@index =< @grid-columns) { // general
+        .cell(@index, @list) when (@index =< @grid-columns) { // general
             @item: ~".flx-cell-@{index}-@{class}";
-            .col((@index + 1), ~"@{list}, @{item}");
+            .cell((@index + 1), ~"@{list}, @{item}");
         }
-        .col(@index, @list) when (@index > @grid-columns) { // terminal
+        .cell(@index, @list) when (@index > @grid-columns) { // terminal
             @{list},
             .flx-cell-shrink-@{class},
             .flx-cell-min-@{class},
@@ -61,7 +61,7 @@
                 padding-left: @half-gutter-width;
             }
         }
-        .col(1); // kickstart it
+        .cell(1); // kickstart it
     }
 
     .calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
@@ -84,15 +84,15 @@
     }
 
     // Create grid for specific class
-    .make-grid(@class) {
-        .flex-grid-columns(@class);
+    .render-grid(@class) {
+        .render-grid-cells-common(@class);
         .loop-grid-columns(@grid-columns, @class, width);
         .loop-grid-columns(@grid-columns, @class, offset);
-        .col-modifiers(@class);
+        .render-cell-modifiers(@class);
     }
 
     // Create additional row modifiers
-    .flx-row-modifiers(@class) {
+    .render-row-modifiers(@class) {
         .flx-row {
             &-reverse-@{class} { flex-direction: row-reverse; }
 
@@ -111,7 +111,7 @@
     }
 
     // Create modifiers for columns
-    .col-modifiers(@class) {
+    .render-cell-modifiers(@class) {
 
         .flx-cell {
             &-@{class} {
@@ -164,9 +164,9 @@
                 max-width: extract(@container-maw, (@index - 1));
             }
 
-            .flx-row-modifiers(@current-class);
+            .render-row-modifiers(@current-class);
 
-            .make-grid(@current-class);
+            .render-grid(@current-class);
 
             .grow-modifiers(@current-class);
         }
@@ -213,10 +213,10 @@
     }
 
     // Render modifiers
-    .flx-row-modifiers(@first-suffix);
+    .render-row-modifiers(@first-suffix);
 
     // Render default state before first breakpoint
-    .make-grid(@first-suffix);
+    .render-grid(@first-suffix);
 
     // Render default state before first breakpoint
     .grow-modifiers(@first-suffix);
