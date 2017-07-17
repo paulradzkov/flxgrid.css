@@ -180,7 +180,7 @@
   max-width: 100%;
   min-width: 0;
 }
-.flx-cell-min-xs {
+.flx-cell-fixed-xs {
   flex-grow: 0;
   flex-basis: 0%;
   max-width: 100%;
@@ -360,7 +360,7 @@
     max-width: 100%;
     min-width: 0;
   }
-  .flx-cell-min-sm {
+  .flx-cell-fixed-sm {
     flex-grow: 0;
     flex-basis: 0%;
     max-width: 100%;
@@ -541,7 +541,7 @@
     max-width: 100%;
     min-width: 0;
   }
-  .flx-cell-min-md {
+  .flx-cell-fixed-md {
     flex-grow: 0;
     flex-basis: 0%;
     max-width: 100%;
@@ -722,7 +722,7 @@
     max-width: 100%;
     min-width: 0;
   }
-  .flx-cell-min-lg {
+  .flx-cell-fixed-lg {
     flex-grow: 0;
     flex-basis: 0%;
     max-width: 100%;
@@ -903,7 +903,7 @@
     max-width: 100%;
     min-width: 0;
   }
-  .flx-cell-min-xl {
+  .flx-cell-fixed-xl {
     flex-grow: 0;
     flex-basis: 0%;
     max-width: 100%;
