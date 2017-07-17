@@ -7,18 +7,20 @@
 
     // media breakpoints (default: as on bootstrap)
     @breakpoints:
+        ~"(min-width: 576px)",
         ~"(min-width: 768px)",
         ~"(min-width: 992px)",
         ~"(min-width: 1200px)";
 
     // max-width of containers according breakpoints
     @container-maw:
+        none,
         750px,
         970px,
         1170px;
 
     // names for breakpoint suffixes
-    @suffixes: xs, sm, md, lg;
+    @suffixes: xs, sm, md, lg, xl;
 
     // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
     // suffixes-count = breakpoints-count + 1
@@ -103,6 +105,17 @@
             &-middle-@{class}   { align-items: center; }
             &-bottom-@{class}   { align-items: flex-end; }
             &-baseline-@{class} { align-items: baseline; }
+
+            &-around-@{class}  { justify-content: space-around; }
+            &-between-@{class} { justify-content: space-between; }
+        }
+
+        .flx-col {
+            &-reverse-@{class} { flex-direction: row-reverse; }
+
+            &-top-@{class}   { justify-content: flex-start; }
+            &-middle-@{class}  { justify-content: center; }
+            &-bottom-@{class}     { justify-content: flex-end; }
 
             &-around-@{class}  { justify-content: space-around; }
             &-between-@{class} { justify-content: space-between; }
