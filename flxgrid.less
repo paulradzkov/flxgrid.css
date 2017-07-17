@@ -94,21 +94,11 @@
     // Create additional row modifiers
     .flx-row-modifiers(@class) {
         .flx-row {
-            &-reverse-@{class} {
-                flex-direction: row-reverse;
-            }
+            &-reverse-@{class} { flex-direction: row-reverse; }
 
-            &-start-@{class} {
-                justify-content: flex-start;
-            }
-
-            &-center-@{class} {
-                justify-content: center;
-            }
-
-            &-end-@{class} {
-                justify-content: flex-end;
-            }
+            &-start-@{class}   { justify-content: flex-start; }
+            &-center-@{class}  { justify-content: center; }
+            &-end-@{class}     { justify-content: flex-end; }
 
             &-top-@{class}      { align-items: flex-start; }
             &-middle-@{class}   { align-items: center; }

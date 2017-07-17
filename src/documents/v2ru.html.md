@@ -173,19 +173,15 @@ layout: docs
 
 ### Столбцы
 
-<table class="classnames">
+<table class="classnames classnames-common">
     <thead>
         <tr>
             <th>.flx</th>
             <th>-col</th>
-            <th></th>
+            <td class="empty"></td>
+            <td class="empty"></td>
             <td>— вертикальная флекс-колонка</td>
         </tr>
-    </thead>
-</table>
-
-<table class="classnames classnames-common">
-    <thead>
         <tr>
             <th>.flx</th>
             <th>-col</th>
@@ -198,9 +194,44 @@ layout: docs
         <tr>
             <td></td>
             <td></td>
-            <td>-start</td>
+            <td>-top</td>
             <td></td>
-            <td>— прижать ячейки к началу (влево)</td>
+            <td>— прижать ячейки вверх (в начало колонки)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>-middle</td>
+            <td></td>
+            <td>— центрировать ячейки по вертикали</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>-bottom</td>
+            <td></td>
+            <td>— прижать ячейки вниз</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>-around</td>
+            <td></td>
+            <td>— распределить ячейки по вертикали с равными отступами вокруг ячеек</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>-between</td>
+            <td></td>
+            <td>— распределить ячейки по вертикали с равными отступами между ячейками</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>-reverse</td>
+            <td></td>
+            <td>— пустить ячейки колонки снизу вверх</td>
         </tr>
     </tbody>
 </table>
@@ -359,6 +390,41 @@ layout: docs
             <td></td>
             <td>— занять всю доступную высоту. Применяется для флекс-колонок</td>
         </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>-xs</td>
+            <td>— для экранов любой ширины</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>-sm</td>
+            <td>— min-width: 576px</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>-md</td>
+            <td>— min-width: 768px</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>-lg</td>
+            <td>— min-width: 992px</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>-xl</td>
+            <td>— min-width: 1200px</td>
+        </tr>
     </tbody>
 </table>
 
@@ -457,3 +523,80 @@ layout: docs
 </div>
 
 У каждой колонки с контентом может быть разная ширина на каждом диапазоне. Например, на элементе одновременно есть классы `.flx-cell-12-xs`, `.flx-cell-8-xs` и `.flx-cell-4-xs`. На самых маленьких экранах этот элемент занимает всю ширину ряда, на маленьких и средних экранах три четверти ширины, а на больших и очень больших экранах — одну треть. У элемента не заданы классы для `md` и `xl` диапазонов. Значит на этих отрезках используется значение ширины предыдущего, более маленького диапазона.
+
+## Демки
+
+### Контейнеры
+
+Контейнеры (container) необходимы для компенсации отступов у рядов. Обратите внимание на отступы по бокам.
+
+<div class="space-minus-h-base-xs space-minus-h-kilo-md">
+    <div class="flx-container">
+        <div class="flx-row">
+            <div class="flx-cell-xs"><div class="box-row">резиновый контейнер</div></div>
+        </div>
+    </div>
+    <div class="flx-container-fixed">
+        <div class="flx-row">
+            <div class="flx-cell-xs"><div class="box-row">контейнер с максимальной шириной</div></div>
+        </div>
+    </div>
+</div>
+
+### Ячейки
+
+#### `.flx-cell-xs`
+
+<div class="flx-row">
+    <div class="flx-cell-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="flx-cell-xs">
+        <div class="box-row">auto</div>
+    </div>
+</div>
+<div class="flx-row">
+    <div class="flx-cell-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="flx-cell-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="flx-cell-xs">
+        <div class="box-row">auto</div>
+    </div>
+</div>
+
+#### `.flx-cell-1-xs` ... `.flx-cell-12-xs`
+
+<div class="flx-row">
+    <div class="flx-cell-1-xs">
+        <div class="box-row">1</div>
+    </div>
+    <div class="flx-cell-2-xs">
+        <div class="box-row">2</div>
+    </div>
+    <div class="flx-cell-3-xs">
+        <div class="box-row">3</div>
+    </div>
+    <div class="flx-cell-6-xs">
+        <div class="box-row">6</div>
+    </div>
+</div>
+
+#### `.flx-cell-shrink-xs`
+
+<div class="flx-row">
+    <div class="flx-cell-shrink-xs">
+        <div class="box-row">каждая</div>
+    </div>
+    <div class="flx-cell-shrink-xs">
+        <div class="box-row">ячейка</div>
+    </div>
+    <div class="flx-cell-shrink-xs">
+        <div class="box-row">ужимается до ширины</div>
+    </div>
+    <div class="flx-cell-shrink-xs">
+        <div class="box-row">её контента</div>
+    </div>
+</div>
