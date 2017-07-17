@@ -39,7 +39,15 @@
     // MIXINS
 
     // Framework grid generation
-    //
+
+    // Create grid for specific suffix class
+    .render-grid(@class) {
+        .render-grid-cells-common(@class);
+        .render-cell-width(@grid-columns, @class);
+        .render-offsets(@grid-columns, @class);
+        .render-cell-modifiers(@class);
+    }
+
     // Used to generate the correct number of grid classes
     // given any value of `@grid-columns`.
 
@@ -66,6 +74,7 @@
         .cell(1); // kickstart it
     }
 
+    // calculate with of each column
     .render-cell-width(@index, @class) when (@index > 0) {
         .render-cell-width((@index - 1), @class); // next iteration
 
@@ -81,44 +90,6 @@
 
         .flx-cell-offset-@{index}-@{class} {
             margin-left: percentage((@index / @grid-columns));
-        }
-    }
-
-    // Create grid for specific class
-    .render-grid(@class) {
-        .render-grid-cells-common(@class);
-        .render-cell-width(@grid-columns, @class);
-        .render-offsets(@grid-columns, @class);
-        .render-cell-modifiers(@class);
-    }
-
-    // Create additional row modifiers
-    .render-flex-modifiers(@class) {
-        .flx-row {
-            &-reverse-@{class} { flex-direction: row-reverse; }
-
-            &-start-@{class}   { justify-content: flex-start; }
-            &-center-@{class}  { justify-content: center; }
-            &-end-@{class}     { justify-content: flex-end; }
-
-            &-top-@{class}      { align-items: flex-start; }
-            &-middle-@{class}   { align-items: center; }
-            &-bottom-@{class}   { align-items: flex-end; }
-            &-baseline-@{class} { align-items: baseline; }
-
-            &-around-@{class}  { justify-content: space-around; }
-            &-between-@{class} { justify-content: space-between; }
-        }
-
-        .flx-col {
-            &-reverse-@{class} { flex-direction: row-reverse; }
-
-            &-top-@{class}   { justify-content: flex-start; }
-            &-middle-@{class}  { justify-content: center; }
-            &-bottom-@{class}     { justify-content: flex-end; }
-
-            &-around-@{class}  { justify-content: space-around; }
-            &-between-@{class} { justify-content: space-between; }
         }
     }
 
@@ -161,6 +132,37 @@
             }
         }
     }
+
+    // Create additional flex row and col modifiers
+    .render-flex-modifiers(@class) {
+        .flx-row {
+            &-reverse-@{class} { flex-direction: row-reverse; }
+
+            &-start-@{class}   { justify-content: flex-start; }
+            &-center-@{class}  { justify-content: center; }
+            &-end-@{class}     { justify-content: flex-end; }
+
+            &-top-@{class}      { align-items: flex-start; }
+            &-middle-@{class}   { align-items: center; }
+            &-bottom-@{class}   { align-items: flex-end; }
+            &-baseline-@{class} { align-items: baseline; }
+
+            &-around-@{class}  { justify-content: space-around; }
+            &-between-@{class} { justify-content: space-between; }
+        }
+
+        .flx-col {
+            &-reverse-@{class} { flex-direction: row-reverse; }
+
+            &-top-@{class}   { justify-content: flex-start; }
+            &-middle-@{class}  { justify-content: center; }
+            &-bottom-@{class}     { justify-content: flex-end; }
+
+            &-around-@{class}  { justify-content: space-around; }
+            &-between-@{class} { justify-content: space-between; }
+        }
+    }
+
 
     // Create breakpoints
     .responsive(@index: @m) when (@index > 1) and (@m = (@n + 1)) {
@@ -225,7 +227,7 @@
     // Render default state before first breakpoint
     .render-grid(@first-suffix);
 
-    // Render mediaqueries with breakpoints
+    // Render mediaqueries with breakpoints if any
     .responsive();
 
 };
