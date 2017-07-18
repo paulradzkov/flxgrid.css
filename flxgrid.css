@@ -74,7 +74,7 @@
 }
 .flx-cell-1-xs, .flx-cell-2-xs, .flx-cell-3-xs, .flx-cell-4-xs, .flx-cell-5-xs, .flx-cell-6-xs, .flx-cell-7-xs, .flx-cell-8-xs, .flx-cell-9-xs, .flx-cell-10-xs, .flx-cell-11-xs, .flx-cell-12-xs,
 .flx-cell-shrink-xs,
-.flx-cell-min-xs,
+.flx-cell-fixed-xs,
 .flx-cell-xs {
   box-sizing: border-box;
   flex: 0 0 auto;
@@ -254,7 +254,7 @@
   }
   .flx-cell-1-sm, .flx-cell-2-sm, .flx-cell-3-sm, .flx-cell-4-sm, .flx-cell-5-sm, .flx-cell-6-sm, .flx-cell-7-sm, .flx-cell-8-sm, .flx-cell-9-sm, .flx-cell-10-sm, .flx-cell-11-sm, .flx-cell-12-sm,
   .flx-cell-shrink-sm,
-  .flx-cell-min-sm,
+  .flx-cell-fixed-sm,
   .flx-cell-sm {
     box-sizing: border-box;
     flex: 0 0 auto;
@@ -435,7 +435,7 @@
   }
   .flx-cell-1-md, .flx-cell-2-md, .flx-cell-3-md, .flx-cell-4-md, .flx-cell-5-md, .flx-cell-6-md, .flx-cell-7-md, .flx-cell-8-md, .flx-cell-9-md, .flx-cell-10-md, .flx-cell-11-md, .flx-cell-12-md,
   .flx-cell-shrink-md,
-  .flx-cell-min-md,
+  .flx-cell-fixed-md,
   .flx-cell-md {
     box-sizing: border-box;
     flex: 0 0 auto;
@@ -616,7 +616,7 @@
   }
   .flx-cell-1-lg, .flx-cell-2-lg, .flx-cell-3-lg, .flx-cell-4-lg, .flx-cell-5-lg, .flx-cell-6-lg, .flx-cell-7-lg, .flx-cell-8-lg, .flx-cell-9-lg, .flx-cell-10-lg, .flx-cell-11-lg, .flx-cell-12-lg,
   .flx-cell-shrink-lg,
-  .flx-cell-min-lg,
+  .flx-cell-fixed-lg,
   .flx-cell-lg {
     box-sizing: border-box;
     flex: 0 0 auto;
@@ -797,7 +797,7 @@
   }
   .flx-cell-1-xl, .flx-cell-2-xl, .flx-cell-3-xl, .flx-cell-4-xl, .flx-cell-5-xl, .flx-cell-6-xl, .flx-cell-7-xl, .flx-cell-8-xl, .flx-cell-9-xl, .flx-cell-10-xl, .flx-cell-11-xl, .flx-cell-12-xl,
   .flx-cell-shrink-xl,
-  .flx-cell-min-xl,
+  .flx-cell-fixed-xl,
   .flx-cell-xl {
     box-sizing: border-box;
     flex: 0 0 auto;

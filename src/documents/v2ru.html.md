@@ -293,7 +293,7 @@ layout: docs
         <tr>
             <td></td>
             <td></td>
-            <td>-min</td>
+            <td>-fixed</td>
             <td></td>
             <td>— ячейка ужимается до своей минимальной ширины. Требует явно заданного `min-width`.</td>
         </tr>
@@ -543,31 +543,11 @@ layout: docs
     </div>
 </div>
 
-### Ячейки
+## Ячейки с заданной шириной
 
-#### `.flx-cell-xs`
+### `.flx-cell-1-xs` ... `.flx-cell-12-xs`
 
-<div class="flx-row">
-    <div class="flx-cell-xs">
-        <div class="box-row">auto</div>
-    </div>
-    <div class="flx-cell-xs">
-        <div class="box-row">auto</div>
-    </div>
-</div>
-<div class="flx-row">
-    <div class="flx-cell-xs">
-        <div class="box-row">auto</div>
-    </div>
-    <div class="flx-cell-xs">
-        <div class="box-row">auto</div>
-    </div>
-    <div class="flx-cell-xs">
-        <div class="box-row">auto</div>
-    </div>
-</div>
-
-#### `.flx-cell-1-xs` ... `.flx-cell-12-xs`
+Ширина ячеейк задана в процентах от контейнера в зависимости от того, на сколько колонок растягиваются такие ячейки.
 
 <div class="flx-row">
     <div class="flx-cell-1-xs">
@@ -584,7 +564,35 @@ layout: docs
     </div>
 </div>
 
-#### `.flx-cell-shrink-xs`
+## Ячейки с автоматической шириной
+
+### `.flx-cell-xs` `.flx-cell-sm` `.flx-cell-md` `.flx-cell-lg` `.flx-cell-xl`
+
+Добавляйте любое количество автоматических ячеей в ряд. Все они примут одинаковую ширину в зависимости от общего количества ячеек в ряду.
+
+<div class="flx-row">
+    <div class="flx-cell-xs">
+        <div class="box-row"></div>
+    </div>
+    <div class="flx-cell-xs">
+        <div class="box-row"></div>
+    </div>
+</div>
+<div class="flx-row">
+        <div class="flx-cell-xs">
+    <div class="box-row"></div>
+    </div>
+    <div class="flx-cell-xs">
+        <div class="box-row"></div>
+    </div>
+    <div class="flx-cell-xs">
+        <div class="box-row"></div>
+    </div>
+</div>
+
+## Ячейки с шириной по контенту
+
+### `.flx-cell-shrink-xs`
 
 <div class="flx-row">
     <div class="flx-cell-shrink-xs">
@@ -597,6 +605,41 @@ layout: docs
         <div class="box-row">ужимается до ширины</div>
     </div>
     <div class="flx-cell-shrink-xs">
-        <div class="box-row">её контента</div>
+        <div class="box-row">её контента, будь то текст, таблицы или изображения.</div>
+    </div>
+    <div class="flx-cell-shrink-xs">
+        <div class="box-row">Когда контента очень много, он старается весь поместиться на одну строку. Но когда заканчивается место, ячейка целиком переносится на следующую «строку» под предыдущие колонки.</div>
+    </div>
+</div>
+
+### `.col-xs-fixed`
+
+<div class="flx-row">
+    <div class="flx-cell-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="flx-cell-fixed-xs" style="min-width: 200px">
+        <div class="box-row">min-width 200px</div>
+    </div>
+    <div class="flx-cell-fixed-xs" style="min-width: 300px">
+        <div class="box-row">min-width 300px</div>
+    </div>
+</div>
+
+
+
+## Комбинирование разных типов ячеек
+
+Вы можете смешивать разные типы ячеек внутри одного ряда.
+
+<div class="flx-row">
+    <div class="flx-cell-1-xs">
+        <div class="box-row">1</div>
+    </div>
+    <div class="flx-cell-xs">
+        <div class="box-row">auto</div>
+    </div>
+    <div class="flx-cell-xs">
+        <div class="box-row">auto</div>
     </div>
 </div>
