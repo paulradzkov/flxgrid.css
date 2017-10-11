@@ -528,7 +528,12 @@ layout: docs
 
 ### Контейнеры
 
-Контейнеры (container) необходимы для компенсации отступов у рядов. Обратите внимание на отступы по бокам.
+Используются для компенсации отступов у рядов. Без контейнеров ряды своими отрицательными маргинами могут создать горизонтальную прокрутку.
+
+Существует два вида контейнеров:
+
+* `.flx-container` — занимает всю ширину окна (родительского блока).
+* `.flx-container-fixed` — ступеньчато меняет максимальную ширину в зависимости от размера вьюпорта.
 
 <div class="space-minus-h-base-xs space-minus-h-kilo-md">
     <div class="flx-container">
@@ -540,27 +545,6 @@ layout: docs
         <div class="flx-row">
             <div class="flx-cell-xs"><div class="box-row">контейнер с максимальной шириной</div></div>
         </div>
-    </div>
-</div>
-
-## Ячейки с заданной шириной
-
-### `.flx-cell-1-xs` ... `.flx-cell-12-xs`
-
-Ширина ячеейк задана в процентах от контейнера в зависимости от того, на сколько колонок растягиваются такие ячейки.
-
-<div class="flx-row">
-    <div class="flx-cell-1-xs">
-        <div class="box-row">1</div>
-    </div>
-    <div class="flx-cell-2-xs">
-        <div class="box-row">2</div>
-    </div>
-    <div class="flx-cell-3-xs">
-        <div class="box-row">3</div>
-    </div>
-    <div class="flx-cell-6-xs">
-        <div class="box-row">6</div>
     </div>
 </div>
 
@@ -587,6 +571,27 @@ layout: docs
     </div>
     <div class="flx-cell-xs">
         <div class="box-row"></div>
+    </div>
+</div>
+
+## Ячейки с заданной шириной
+
+### `.flx-cell-1-xs` ... `.flx-cell-12-xs`
+
+Ширина ячеейк задана в процентах от контейнера в зависимости от того, на сколько колонок растягиваются такие ячейки.
+
+<div class="flx-row">
+    <div class="flx-cell-1-xs">
+        <div class="box-row">1</div>
+    </div>
+    <div class="flx-cell-2-xs">
+        <div class="box-row">2</div>
+    </div>
+    <div class="flx-cell-3-xs">
+        <div class="box-row">3</div>
+    </div>
+    <div class="flx-cell-6-xs">
+        <div class="box-row">6</div>
     </div>
 </div>
 
