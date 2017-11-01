@@ -2,20 +2,27 @@
 
 [![npm version](https://badge.fury.io/js/flxgrid.css.svg)](http://badge.fury.io/js/flxgrid.css)
 
-Makes grid classes for given number of columns (default: 12) and breakpoints (default: xs, sm, md, lg).
+Makes grid classes for given number of columns and breakpoints (default: xs, sm, md, lg, xl).
+
+**Defaults**
+
+* 12 columns
+* 40px default gutter
+* 5 mobile first media ranges:
+  - xs — extra small: 0px — ∞
+  - sm — small: 578px — ∞
+  - md — medium: 768px — ∞
+  - lg — large: 992px — ∞
+  - xl — extra large: 1200px — ∞
 
 ## Usage in HTML
 
 ```html
-<div class="row">
-    <div class="col-xs-4">
-        ...
-    </div>
-    <div class="col-xs-4">
-        ...
-    </div>
-    <div class="col-xs-4">
-        ...
+<div class="flx-container">
+    <div class="flx-row">
+        <div class="flx-cell">
+            content
+        </div>
     </div>
 </div>
 ```
