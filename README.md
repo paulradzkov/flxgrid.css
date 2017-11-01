@@ -15,6 +15,27 @@ Makes grid classes for given number of columns and breakpoints.
   - `lg` — large: 992px — ∞
   - `xl` — extra large: 1200px — ∞
 
+## Installation
+
+From NPM:
+
+```cmd
+npm install flxgrid.css@2.0.0alpha --save-dev
+```
+
+Then import into your main less file:
+
+```less
+@import (less) "./node_modules/flxgrid.css/flxgrid.less";
+```
+
+Or use from CDN:
+
+```
+https://unpkg.com/flxgrid.css@2.0.0alpha/flxgrid.css
+https://unpkg.com/flxgrid.css@2.0.0alpha/flxgrid.min.css
+```
+
 ## Usage in HTML
 
 Apply classnames in markup:
