@@ -64,7 +64,7 @@ Apply classnames in markup:
 
 Optional row modifiers:
 
-.flx-row-reverse-xs     
+.flx-row-reverse:xs
         -start          — push cells to start (left)
         -center         — center cells horizontally
         -end            — пpush cells to end (right)
@@ -75,11 +75,11 @@ Optional row modifiers:
         -around         — distribute cells with equal horizontal space around each cell
         -between        — push first and last cells to the edges and distribute the rest cells evenly
         -reverse        — put cells in reverse order (from right to left)
-                -xs     — on any screens
-                -sm     — min-width: 576px
-                -md     — min-width: 768px
-                -lg     — min-width: 992px
-                -xl     — min-width: 1200px
+                :xs     — on any screens
+                :sm     — min-width: 576px
+                :md     — min-width: 768px
+                :lg     — min-width: 992px
+                :xl     — min-width: 1200px
 ```
 
 ### Columns
@@ -89,51 +89,51 @@ Optional row modifiers:
 
 Optional column modifiers:
 
-.flx-col-start-xs	
+.flx-col-start:xs
         -top            — push cells to top (to start)
         -middle         — align cells vertical
         -bottom         — push cells to bottom (to end)
         -around         — distribute cells with equalvertical space around each cell
         -between        — push first and last cells to the edges and distribute the rest cells evenly
         -reverse        — ut cells in reverse order (from bottom to top)
-              -xs       — on any screens
-              -sm       — min-width: 576px
-              -md       — min-width: 768px
-              -lg       — min-width: 992px
-              -xl       — min-width: 1200px
+              :xs       — on any screens
+              :sm       — min-width: 576px
+              :md       — min-width: 768px
+              :lg       — min-width: 992px
+              :xl       — min-width: 1200px
 ```
 
 ### Cells
 
 ```
-Type of cells: 
+Type of cells:
 
-.flx-cell-xs            — auto-width cell
-.flx-cell-1-xs          — cell with is 1 column
+.flx-cell:xs            — auto-width cell
+.flx-cell-1:xs          — cell with is 1 column
           ...           — any number 1 to 12
          -12            — cell withis 12 columns, full width
-.flx-cell-shrink-xs     — cell shrinks it width to the width of content
-.flx-cell-fixed-xs      — cell shrinks to minimal width. Requires explicit min-width.
-               -xs      — on any screens
-               -sm      — min-width: 576px
-               -md      — min-width: 768px
-               -lg      — min-width: 992px
-               -xl      — min-width: 1200px
+.flx-cell-shrink:xs     — cell shrinks it width to the width of content
+.flx-cell-fixed:xs      — cell shrinks to minimal width. Requires explicit min-width.
+               :xs      — on any screens
+               :sm      — min-width: 576px
+               :md      — min-width: 768px
+               :lg      — min-width: 992px
+               :xl      — min-width: 1200px
 
 Optional cell modifiers:
 
-.flx-cell-first-xs	
+.flx-cell-first:xs
          -first         — move cell into the first place
          -last          — move cell into the last place
          -offset-1      — shift cell right on 1 column with margin-left: 8.33333%
          -offset-6      — any number 1 to 12
          -offset-12     — shift cell right on 12 column with margin-left: 100%
          -grow          — Use all available height. Used for flex-columns
-               -xs      — on any screens
-               -sm      — min-width: 576px
-               -md      — min-width: 768px
-               -lg      — min-width: 992px
-               -xl      — min-width: 1200px
+               :xs      — on any screens
+               :sm      — min-width: 576px
+               :md      — min-width: 768px
+               :lg      — min-width: 992px
+               :xl      — min-width: 1200px
 ```
 
 ## Default parameters
@@ -165,6 +165,7 @@ Default settings:
 
     // names for breakpoint suffixes
     @suffixes: xs, sm, md, lg, xl;
+    @suffixes-separator: ~"\:";
 
     // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
     // suffixes-count = breakpoints-count + 1
@@ -206,5 +207,6 @@ Redefining gutter-width and breakpoints:
 
     // names for breakpoint suffixes
     @suffixes: xxs, xs, sm, md, lg, xlg;
+    @suffixes-separator: --;
 }
 ```
