@@ -21,6 +21,7 @@
 
     // names for breakpoint suffixes
     @suffixes: xs, sm, md, lg, xl;
+    @suffixes-separator: ~"\:";
 
     // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
     // suffixes-count = breakpoints-count + 1
@@ -53,18 +54,18 @@
 
     .render-grid-cells-common(@class) {
         .cell(@index) { // initial
-            @item: ~".flx-cell-@{index}-@{class}";
+            @item: ~".flx-cell-@{index}@{suffixes-separator}@{class}";
             .cell((@index + 1), @item);
         }
         .cell(@index, @list) when (@index =< @grid-columns) { // general
-            @item: ~".flx-cell-@{index}-@{class}";
+            @item: ~".flx-cell-@{index}@{suffixes-separator}@{class}";
             .cell((@index + 1), ~"@{list}, @{item}");
         }
         .cell(@index, @list) when (@index > @grid-columns) { // terminal
             @{list},
-            .flx-cell-shrink-@{class},
-            .flx-cell-fixed-@{class},
-            .flx-cell-@{class} {
+            .flx-cell-shrink@{suffixes-separator}@{class},
+            .flx-cell-fixed@{suffixes-separator}@{class},
+            .flx-cell@{suffixes-separator}@{class} {
                 box-sizing: border-box;
                 flex: 0 0 auto;
                 padding-right: @half-gutter-width;
@@ -78,7 +79,7 @@
     .render-cell-width(@index, @class) when (@index > 0) {
         .render-cell-width((@index - 1), @class); // next iteration
 
-        .flx-cell-@{index}-@{class} {
+        .flx-cell-@{index}@{suffixes-separator}@{class} {
             flex-basis: percentage((@index / @grid-columns));
             max-width:  percentage((@index / @grid-columns));
         }
@@ -88,7 +89,7 @@
     .render-offsets(@index, @class) when (@index >= 0) {
         .render-offsets((@index - 1), @class); // next iteration
 
-        .flx-cell-offset-@{index}-@{class} {
+        .flx-cell-offset-@{index}@{suffixes-separator}@{class} {
             margin-left: percentage((@index / @grid-columns));
         }
     }
@@ -97,37 +98,37 @@
     .render-cell-modifiers(@class) {
 
         .flx-cell {
-            &-@{class} {
+            &@{suffixes-separator}@{class} {
                 flex-grow: 1;
                 flex-basis: 0%;
                 max-width: 100%;
                 min-width: 0;
             }
 
-            &-shrink-@{class} {
+            &-shrink@{suffixes-separator}@{class} {
                 flex-grow: 0;
                 flex-basis: auto;
                 max-width: 100%;
                 min-width: 0;
             }
 
-            &-fixed-@{class} {
+            &-fixed@{suffixes-separator}@{class} {
                 flex-grow: 0;
                 flex-basis: 0%;
                 max-width: 100%;
                 min-width: 0;
             }
 
-            &-first-@{class} { order: -1; }
-            &-last-@{class}  { order:  1; }
+            &-first@{suffixes-separator}@{class} { order: -1; }
+            &-last@{suffixes-separator}@{class}  { order:  1; }
 
-            &-flex-@{class} {
+            &-flex@{suffixes-separator}@{class} {
                 display: flex;
                 flex-direction: column;
                 align-items: stretch;
             }
 
-            &-grow-@{class} {
+            &-grow@{suffixes-separator}@{class} {
                 flex-grow: 1;
             }
         }
@@ -136,30 +137,30 @@
     // Create additional flex row and col modifiers
     .render-flex-modifiers(@class) {
         .flx-row {
-            &-reverse-@{class} { flex-direction: row-reverse; }
+            &-reverse@{suffixes-separator}@{class} { flex-direction: row-reverse; }
 
-            &-start-@{class}   { justify-content: flex-start; }
-            &-center-@{class}  { justify-content: center; }
-            &-end-@{class}     { justify-content: flex-end; }
+            &-start@{suffixes-separator}@{class}   { justify-content: flex-start; }
+            &-center@{suffixes-separator}@{class}  { justify-content: center; }
+            &-end@{suffixes-separator}@{class}     { justify-content: flex-end; }
 
-            &-top-@{class}      { align-items: flex-start; }
-            &-middle-@{class}   { align-items: center; }
-            &-bottom-@{class}   { align-items: flex-end; }
-            &-baseline-@{class} { align-items: baseline; }
+            &-top@{suffixes-separator}@{class}      { align-items: flex-start; }
+            &-middle@{suffixes-separator}@{class}   { align-items: center; }
+            &-bottom@{suffixes-separator}@{class}   { align-items: flex-end; }
+            &-baseline@{suffixes-separator}@{class} { align-items: baseline; }
 
-            &-around-@{class}  { justify-content: space-around; }
-            &-between-@{class} { justify-content: space-between; }
+            &-around@{suffixes-separator}@{class}  { justify-content: space-around; }
+            &-between@{suffixes-separator}@{class} { justify-content: space-between; }
         }
 
         .flx-col {
-            &-reverse-@{class} { flex-direction: row-reverse; }
+            &-reverse@{suffixes-separator}@{class} { flex-direction: row-reverse; }
 
-            &-top-@{class}   { justify-content: flex-start; }
-            &-middle-@{class}  { justify-content: center; }
-            &-bottom-@{class}     { justify-content: flex-end; }
+            &-top@{suffixes-separator}@{class}   { justify-content: flex-start; }
+            &-middle@{suffixes-separator}@{class}  { justify-content: center; }
+            &-bottom@{suffixes-separator}@{class}     { justify-content: flex-end; }
 
-            &-around-@{class}  { justify-content: space-around; }
-            &-between-@{class} { justify-content: space-between; }
+            &-around@{suffixes-separator}@{class}  { justify-content: space-around; }
+            &-between@{suffixes-separator}@{class} { justify-content: space-between; }
         }
     }
 
