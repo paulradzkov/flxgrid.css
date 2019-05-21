@@ -52,7 +52,7 @@ layout: docs
             <th>.flx</th>
             <th>-row</th>
             <th>-reverse</th>
-            <th>-xs</th>
+            <th>:xs</th>
             <td>— модификаторы рядов</td>
         </tr>
     </thead>
@@ -131,35 +131,35 @@ layout: docs
             <td></td>
             <td></td>
             <td></td>
-            <td>-xs</td>
+            <td>:xs</td>
             <td>— для экранов любой ширины</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-sm</td>
+            <td>:sm</td>
             <td>— min-width: 576px</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-md</td>
+            <td>:md</td>
             <td>— min-width: 768px</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-lg</td>
+            <td>:lg</td>
             <td>— min-width: 992px</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-xl</td>
+            <td>:xl</td>
             <td>— min-width: 1200px</td>
         </tr>
     </tbody>
@@ -168,7 +168,7 @@ layout: docs
 Модификаторы ряда применяются *вместе* с классом ряда:
 
 ```html
-<div class="flx-row flx-row-center-sm">...</div>
+<div class="flx-row flx-row-center:sm">...</div>
 ```
 
 ### Столбцы
@@ -186,7 +186,7 @@ layout: docs
             <th>.flx</th>
             <th>-col</th>
             <th>-start</th>
-            <th>-xs</th>
+            <th>:xs</th>
             <td></td>
         </tr>
     </thead>
@@ -239,7 +239,7 @@ layout: docs
 Модификаторы столбца применяются *вместе* с классом столбца:
 
 ```html
-<div class="flx-col flx-col-bottom-lg">...</div>
+<div class="flx-col flx-col-bottom:lg">...</div>
 ```
 
 ### Ячейки
@@ -250,7 +250,7 @@ layout: docs
             <th>.flx</th>
             <th>-cell</th>
             <th>-shrink</th>
-            <th>-xs</th>
+            <th>:xs</th>
             <td></td>
         </tr>
     </thead>
@@ -301,35 +301,35 @@ layout: docs
             <td></td>
             <td></td>
             <td></td>
-            <td>-xs</td>
+            <td>:xs</td>
             <td>— для экранов любой ширины</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-sm</td>
+            <td>:sm</td>
             <td>— min-width: 576px</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-md</td>
+            <td>:md</td>
             <td>— min-width: 768px</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-lg</td>
+            <td>:lg</td>
             <td>— min-width: 992px</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-xl</td>
+            <td>:xl</td>
             <td>— min-width: 1200px</td>
         </tr>
     </tbody>
@@ -343,7 +343,7 @@ layout: docs
             <th>.flx</th>
             <th>-cell</th>
             <th>-first</th>
-            <th>-xs</th>
+            <th>:xs</th>
             <td></td>
         </tr>
     </thead>
@@ -394,35 +394,35 @@ layout: docs
             <td></td>
             <td></td>
             <td></td>
-            <td>-xs</td>
+            <td>:xs</td>
             <td>— для экранов любой ширины</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-sm</td>
+            <td>:sm</td>
             <td>— min-width: 576px</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-md</td>
+            <td>:md</td>
             <td>— min-width: 768px</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-lg</td>
+            <td>:lg</td>
             <td>— min-width: 992px</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td>-xl</td>
+            <td>:xl</td>
             <td>— min-width: 1200px</td>
         </tr>
     </tbody>
@@ -453,20 +453,20 @@ layout: docs
 
 **Шириной** каждой ячейки с контентом можно управлять при помощи классов. По-умолчанию в модульной сетке 12 колонок. Число в классах показывает, сколько колонок в ширину занимает данная ячейка:
 
-* `.flx-cell-12-xs` — занимает всю ширину ряда.
-* `.flx-cell-6-xs` — занимает половину ширины ряда.
-* `.flx-cell-3-xs` — занимает четверть ширины ряда.
-* `.flx-cell-1-xs` — занимает 1/12 ширины ряда.
+* `.flx-cell-12:xs` — занимает всю ширину ряда.
+* `.flx-cell-6:xs` — занимает половину ширины ряда.
+* `.flx-cell-3:xs` — занимает четверть ширины ряда.
+* `.flx-cell-1:xs` — занимает 1/12 ширины ряда.
 
 <div class="flx-row">
-    <div class="flx-cell-12-xs"><div class="box-row"><code>.flx-cell-12-xs</code></div></div>
+    <div class="flx-cell-12:xs"><div class="box-row"><code>.flx-cell-12:xs</code></div></div>
 </div>
-<div class="flx-row space-out-bottom-base-xs">
-    <div class="flx-cell-6-xs"><div class="box-row"><code>.flx-cell-6-xs</code></div></div>
-    <div class="flx-cell-3-xs"><div class="box-row"><code>.flx-cell-3-xs</code></div></div>
-    <div class="flx-cell-1-xs"><div class="box-row"></div></div>
-    <div class="flx-cell-1-xs"><div class="box-row"></div></div>
-    <div class="flx-cell-1-xs"><div class="box-row"></div></div>
+<div class="flx-row space-out-bottom-base:xs">
+    <div class="flx-cell-6:xs"><div class="box-row"><code>.flx-cell-6:xs</code></div></div>
+    <div class="flx-cell-3:xs"><div class="box-row"><code>.flx-cell-3:xs</code></div></div>
+    <div class="flx-cell-1:xs"><div class="box-row"></div></div>
+    <div class="flx-cell-1:xs"><div class="box-row"></div></div>
+    <div class="flx-cell-1:xs"><div class="box-row"></div></div>
 </div>
 
 Сумма ширин колонок в ряду не обязательно должна быть равна 12. Если меньше 12, то колонки не занимают всю доступную ширину ряда и прижаты влево (по-умолчанию). Если сумма чисел в ряду превышает 12, то те колонки, что не поместились, переносятся на следующую строку.
@@ -486,35 +486,35 @@ layout: docs
 <div class="" style="overflow: scroll">
     <div class="" style="min-width: 1280px">
         <div class="flx-row">
-            <div class="flx-cell-xs">
+            <div class="flx-cell:xs">
                 <code>xs: 0 — ∞</code>
                 <div class="box-row"></div>
             </div>
         </div>
         <div class="flx-row">
-            <div class="flx-cell-min-xs" style="min-width: 578px"></div>
-            <div class="flx-cell-xs">
+            <div class="flx-cell-min:xs" style="min-width: 578px"></div>
+            <div class="flx-cell:xs">
                 <code>sm: 578px — ∞</code>
                 <div class="box-row"></div>
             </div>
         </div>
         <div class="flx-row">
-            <div class="flx-cell-min-xs" style="min-width: 768px"></div>
-            <div class="flx-cell-xs">
+            <div class="flx-cell-min:xs" style="min-width: 768px"></div>
+            <div class="flx-cell:xs">
                 <code>md: 768px — ∞</code>
                 <div class="box-row"></div>
             </div>
         </div>
         <div class="flx-row">
-            <div class="flx-cell-min-xs" style="min-width: 992px"></div>
-            <div class="flx-cell-xs">
+            <div class="flx-cell-min:xs" style="min-width: 992px"></div>
+            <div class="flx-cell:xs">
                 <code>lg: 992px — ∞</code>
                 <div class="box-row"></div>
             </div>
         </div>
         <div class="flx-row">
-            <div class="flx-cell-min-xs" style="min-width: 1200px"></div>
-            <div class="flx-cell-xs">
+            <div class="flx-cell-min:xs" style="min-width: 1200px"></div>
+            <div class="flx-cell:xs">
                 <code>xl: 1200px — ∞</code>
                 <div class="box-row"></div>
             </div>
@@ -522,7 +522,7 @@ layout: docs
     </div>
 </div>
 
-У каждой колонки с контентом может быть разная ширина на каждом диапазоне. Например, на элементе одновременно есть классы `.flx-cell-12-xs`, `.flx-cell-8-xs` и `.flx-cell-4-xs`. На самых маленьких экранах этот элемент занимает всю ширину ряда, на маленьких и средних экранах три четверти ширины, а на больших и очень больших экранах — одну треть. У элемента не заданы классы для `md` и `xl` диапазонов. Значит на этих отрезках используется значение ширины предыдущего, более маленького диапазона.
+У каждой колонки с контентом может быть разная ширина на каждом диапазоне. Например, на элементе одновременно есть классы `.flx-cell-12:xs`, `.flx-cell-8:xs` и `.flx-cell-4:xs`. На самых маленьких экранах этот элемент занимает всю ширину ряда, на маленьких и средних экранах три четверти ширины, а на больших и очень больших экранах — одну треть. У элемента не заданы классы для `md` и `xl` диапазонов. Значит на этих отрезках используется значение ширины предыдущего, более маленького диапазона.
 
 ## Демки
 
@@ -538,95 +538,95 @@ layout: docs
 <div class="space-minus-h-base-xs space-minus-h-kilo-md">
     <div class="flx-container">
         <div class="flx-row">
-            <div class="flx-cell-xs"><div class="box-row">резиновый контейнер</div></div>
+            <div class="flx-cell:xs"><div class="box-row">резиновый контейнер</div></div>
         </div>
     </div>
     <div class="flx-container-fixed">
         <div class="flx-row">
-            <div class="flx-cell-xs"><div class="box-row">контейнер с максимальной шириной</div></div>
+            <div class="flx-cell:xs"><div class="box-row">контейнер с максимальной шириной</div></div>
         </div>
     </div>
 </div>
 
 ## Ячейки с автоматической шириной
 
-### `.flx-cell-xs` `.flx-cell-sm` `.flx-cell-md` `.flx-cell-lg` `.flx-cell-xl`
+### `.flx-cell:xs` `.flx-cell:sm` `.flx-cell:md` `.flx-cell:lg` `.flx-cell:xl`
 
 Добавляйте любое количество автоматических ячеей в ряд. Все они примут одинаковую ширину в зависимости от общего количества ячеек в ряду.
 
 <div class="flx-row">
-    <div class="flx-cell-xs">
+    <div class="flx-cell:xs">
         <div class="box-row"></div>
     </div>
-    <div class="flx-cell-xs">
+    <div class="flx-cell:xs">
         <div class="box-row"></div>
     </div>
 </div>
 <div class="flx-row">
-        <div class="flx-cell-xs">
+        <div class="flx-cell:xs">
     <div class="box-row"></div>
     </div>
-    <div class="flx-cell-xs">
+    <div class="flx-cell:xs">
         <div class="box-row"></div>
     </div>
-    <div class="flx-cell-xs">
+    <div class="flx-cell:xs">
         <div class="box-row"></div>
     </div>
 </div>
 
 ## Ячейки с заданной шириной
 
-### `.flx-cell-1-xs` ... `.flx-cell-12-xs`
+### `.flx-cell-1:xs` ... `.flx-cell-12:xs`
 
 Ширина ячеейк задана в процентах от контейнера в зависимости от того, на сколько колонок растягиваются такие ячейки.
 
 <div class="flx-row">
-    <div class="flx-cell-1-xs">
+    <div class="flx-cell-1:xs">
         <div class="box-row">1</div>
     </div>
-    <div class="flx-cell-2-xs">
+    <div class="flx-cell-2:xs">
         <div class="box-row">2</div>
     </div>
-    <div class="flx-cell-3-xs">
+    <div class="flx-cell-3:xs">
         <div class="box-row">3</div>
     </div>
-    <div class="flx-cell-6-xs">
+    <div class="flx-cell-6:xs">
         <div class="box-row">6</div>
     </div>
 </div>
 
 ## Ячейки с шириной по контенту
 
-### `.flx-cell-shrink-xs`
+### `.flx-cell-shrink:xs`
 
 <div class="flx-row">
-    <div class="flx-cell-shrink-xs">
+    <div class="flx-cell-shrink:xs">
         <div class="box-row">каждая</div>
     </div>
-    <div class="flx-cell-shrink-xs">
+    <div class="flx-cell-shrink:xs">
         <div class="box-row">ячейка</div>
     </div>
-    <div class="flx-cell-shrink-xs">
+    <div class="flx-cell-shrink:xs">
         <div class="box-row">ужимается до ширины</div>
     </div>
-    <div class="flx-cell-shrink-xs">
+    <div class="flx-cell-shrink:xs">
         <div class="box-row">её контента, будь то текст, таблицы или изображения.</div>
     </div>
-    <div class="flx-cell-shrink-xs">
+    <div class="flx-cell-shrink:xs">
         <div class="box-row">Когда контента очень много, он старается весь поместиться на одну строку. Но когда заканчивается место, ячейка целиком переносится на следующую «строку» под предыдущие колонки.</div>
     </div>
 </div>
 
-### `.col-xs-fixed`
+### `.flx-cell-fixed:xs`
 
 <div class="flx-row">
-    <div class="flx-cell-xs">
+    <div class="flx-cell:xs">
         <div class="box-row">auto</div>
     </div>
-    <div class="flx-cell-fixed-xs" style="min-width: 200px">
+    <div class="flx-cell-fixed:xs" style="min-width: 200px">
         <div class="box-row">min-width 200px</div>
     </div>
-    <div class="flx-cell-fixed-xs" style="min-width: 300px">
+    <div class="flx-cell-fixed:xs" style="min-width: 300px">
         <div class="box-row">min-width 300px</div>
     </div>
 </div>
@@ -638,13 +638,15 @@ layout: docs
 Вы можете смешивать разные типы ячеек внутри одного ряда.
 
 <div class="flx-row">
-    <div class="flx-cell-1-xs">
+    <div class="flx-cell-1:xs">
         <div class="box-row">1</div>
     </div>
-    <div class="flx-cell-xs">
+    <div class="flx-cell:xs">
         <div class="box-row">auto</div>
     </div>
-    <div class="flx-cell-xs">
+    <div class="flx-cell:xs">
         <div class="box-row">auto</div>
     </div>
 </div>
+
+##

@@ -108,13 +108,6 @@ module.exports = (grunt) ->
 					async: true
 				command: 'docpad run'
 
-		# notify
-		notify:
-			less:
-				options:
-					title: 'LESS'
-					message: 'flxgrid.css compiled'
-
 	# measures the time each task takes
 	require('time-grunt')(grunt);
 
@@ -132,5 +125,5 @@ module.exports = (grunt) ->
 
 	# Register our Grunt tasks.
 	grunt.registerTask 'deploy',			 ['clean', 'less', 'postcss', 'shell:deploy' ]
-	grunt.registerTask 'run',				 ['less', 'postcss', 'notify:less', 'shell:docpadrun', 'watch:less']
+	grunt.registerTask 'run',				 ['less', 'postcss', 'shell:docpadrun', 'watch:less']
 	grunt.registerTask 'default',			 ['run']
