@@ -83,7 +83,6 @@ module.exports = (grunt) ->
 					'less:development'
 					'less:site'
 					'postcss:site'
-					'notify:less'
 				]
 
 		# start server
@@ -121,7 +120,6 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-shell-spawn'
 	grunt.loadNpmTasks 'grunt-newer'
 	grunt.loadNpmTasks 'grunt-postcss'
-	grunt.loadNpmTasks 'grunt-notify'
 
 	# Register our Grunt tasks.
 	grunt.registerTask 'deploy',			 ['clean', 'less', 'postcss', 'shell:deploy' ]

@@ -2,38 +2,33 @@
 .grid-settings() {
 
     // settings
-    @grid-columns: 12;   // number of columns
+    @grid-columns: 4;   // number of columns
     @gutter-width: 40px; // gap between columns
 
-    // media breakpoints (default: as on bootstrap)
-    @breakpoints:
+    // media breakpoints
+    @viewport-breakpoints:
         ~"(min-width: 576px)",
-        ~"(min-width: 768px)",
-        ~"(min-width: 992px)",
-        ~"(min-width: 1200px)";
+        ~"(min-width: 768px)";
 
     // max-width of containers according breakpoints
-    @container-maw:
+    @container-maxwidth:
         none,
-        750px,
-        970px,
-        1170px;
+        750px;
 
-    // names for breakpoint suffixes
-    @suffixes: xs, sm, md, lg, xl;
-    @suffixes-separator: ~"\:";
+    // names for viewport suffixes
+    @suffixes:  ~"\:sm", ~"\:md", ~"\:lg";
 
     // IMPORTANT: suffixes count should be bigger than breakpoints count by 1
     // suffixes-count = breakpoints-count + 1
 
 }
 
-@grid-render: {
+& {
 
     // calculations
-    @gutter-compensation: ((@gutter-width * 0.5) * -1);
-    @half-gutter-width:   ((@gutter-width) * 0.5);
-    @n: length(@breakpoints); // how many breakpoints we have
+    @gutter-compensation: (@gutter-width * -0.5);
+    @half-gutter-width:   (@gutter-width * 0.5);
+    @n: length(@viewport-breakpoints); // how many breakpoints we have
     @m: length(@suffixes);    // how many suffixes we have
     @first-suffix: extract(@suffixes, 1); // first breakpoint suffix
 
@@ -42,125 +37,128 @@
     // Framework grid generation
 
     // Create grid for specific suffix class
-    .render-grid(@class) {
-        .render-grid-cells-common(@class);
-        .render-cell-width(@grid-columns, @class);
-        .render-offsets(@grid-columns, @class);
-        .render-cell-modifiers(@class);
+    .render-grid(@suffix) {
+        .render-grid-cells-common(@suffix);
+        .render-cell-width(@grid-columns, @suffix);
+        .render-offsets(@grid-columns, @suffix);
+        .render-cell-modifiers(@suffix);
     }
 
     // Used to generate the correct number of grid classes
     // given any value of `@grid-columns`.
 
-    .render-grid-cells-common(@class) {
+    .render-grid-cells-common(@suffix) {
         .cell(@index) { // initial
-            @item: ~".flx-cell-@{index}@{suffixes-separator}@{class}";
+            @item: ~".flx-cell-@{index}@{suffix}";
             .cell((@index + 1), @item);
         }
         .cell(@index, @list) when (@index =< @grid-columns) { // general
-            @item: ~".flx-cell-@{index}@{suffixes-separator}@{class}";
+            @item: ~".flx-cell-@{index}@{suffix}";
             .cell((@index + 1), ~"@{list}, @{item}");
         }
         .cell(@index, @list) when (@index > @grid-columns) { // terminal
             @{list},
-            .flx-cell-shrink@{suffixes-separator}@{class},
-            .flx-cell-fixed@{suffixes-separator}@{class},
-            .flx-cell@{suffixes-separator}@{class} {
+            .flx-cell-shrink@{suffix},
+            .flx-cell-fixed@{suffix},
+            .flx-cell@{suffix} {
                 box-sizing: border-box;
                 flex: 0 0 auto;
-                padding-right: @half-gutter-width;
-                padding-left: @half-gutter-width;
+                margin-right: @half-gutter-width;  // why paddings, not margins
+                margin-left: @half-gutter-width;
             }
         }
         .cell(1); // kickstart it
     }
 
     // calculate with of each column
-    .render-cell-width(@index, @class) when (@index > 0) {
-        .render-cell-width((@index - 1), @class); // next iteration
+    .render-cell-width(@index, @suffix) when (@index > 0) {
+        .render-cell-width((@index - 1), @suffix); // next iteration
 
-        .flx-cell-@{index}@{suffixes-separator}@{class} {
+        .flx-cell-@{index}@{suffix} {
             flex-basis: percentage((@index / @grid-columns));
             max-width:  percentage((@index / @grid-columns));
         }
     }
 
     // for offsets we must have .flx-cell-offset-0 to erase offset
-    .render-offsets(@index, @class) when (@index >= 0) {
-        .render-offsets((@index - 1), @class); // next iteration
+    .render-offsets(@index, @suffix) when (@index >= 0) {
+        .render-offsets((@index - 1), @suffix); // next iteration
 
-        .flx-cell-offset-@{index}@{suffixes-separator}@{class} {
-            margin-left: percentage((@index / @grid-columns));
+        .flx-cell-offset-@{index}@{suffix} {
+            @shift: percentage((@index / @grid-columns));
+            margin-left: calc( @shift -  @half-gutter-width);
         }
     }
 
     // Create modifiers for columns
-    .render-cell-modifiers(@class) {
+    .render-cell-modifiers(@suffix) {
 
         .flx-cell {
-            &@{suffixes-separator}@{class} {
+            &@{suffix} {
                 flex-grow: 1;
                 flex-basis: 0%;
                 max-width: 100%;
                 min-width: 0;
             }
 
-            &-shrink@{suffixes-separator}@{class} {
+            &-shrink@{suffix} {
                 flex-grow: 0;
                 flex-basis: auto;
                 max-width: 100%;
                 min-width: 0;
             }
 
-            &-fixed@{suffixes-separator}@{class} {
+            &-fixed@{suffix} {
                 flex-grow: 0;
                 flex-basis: 0%;
                 max-width: 100%;
                 min-width: 0;
             }
 
-            &-first@{suffixes-separator}@{class} { order: -1; }
-            &-last@{suffixes-separator}@{class}  { order:  1; }
+            &-first@{suffix} { order: -1; }
+            &-last@{suffix}  { order:  1; }
 
-            &-flex@{suffixes-separator}@{class} {
+            &-flex@{suffix} {
                 display: flex;
                 flex-direction: column;
                 align-items: stretch;
             }
 
-            &-grow@{suffixes-separator}@{class} {
+            &-grow@{suffix} {
                 flex-grow: 1;
             }
         }
     }
 
     // Create additional flex row and col modifiers
-    .render-flex-modifiers(@class) {
+    .render-flex-modifiers(@suffix) {
         .flx-row {
-            &-reverse@{suffixes-separator}@{class}  { flex-direction: row-reverse; }
+            &-reverse@{suffix}  { flex-direction: row-reverse; }
 
-            &-start@{suffixes-separator}@{class}    { justify-content: flex-start; }
-            &-center@{suffixes-separator}@{class}   { justify-content: center; }
-            &-end@{suffixes-separator}@{class}      { justify-content: flex-end; }
+            &-start@{suffix}    { justify-content: flex-start; }
+            &-center@{suffix}   { justify-content: center; }
+            &-end@{suffix}      { justify-content: flex-end; }
 
-            &-top@{suffixes-separator}@{class}      { align-items: flex-start; }
-            &-middle@{suffixes-separator}@{class}   { align-items: center; }
-            &-bottom@{suffixes-separator}@{class}   { align-items: flex-end; }
-            &-baseline@{suffixes-separator}@{class} { align-items: baseline; }
+            &-top@{suffix}      { align-items: flex-start; }
+            &-middle@{suffix}   { align-items: center; }
+            &-bottom@{suffix}   { align-items: flex-end; }
+            &-baseline@{suffix} { align-items: baseline; }
 
-            &-around@{suffixes-separator}@{class}   { justify-content: space-around; }
-            &-between@{suffixes-separator}@{class}  { justify-content: space-between; }
+            &-around@{suffix}   { justify-content: space-around; }
+            &-between@{suffix}  { justify-content: space-between; }
+
+            &-nowrap@{suffix}   { flex-wrap: nowrap; }
         }
 
         .flx-col {
-            &-reverse@{suffixes-separator}@{class}  { flex-direction: row-reverse; }
+            &-reverse@{suffix}  { flex-direction: row-reverse; }
 
-            &-top@{suffixes-separator}@{class}      { justify-content: flex-start; }
-            &-middle@{suffixes-separator}@{class}   { justify-content: center; }
-            &-bottom@{suffixes-separator}@{class}   { justify-content: flex-end; }
+            &-top@{suffix}      { justify-content: flex-start; }
+            &-middle@{suffix}   { justify-content: center; }
+            &-bottom@{suffix}   { justify-content: flex-end; }
 
-            &-around@{suffixes-separator}@{class}   { justify-content: space-around; }
-            &-between@{suffixes-separator}@{class}  { justify-content: space-between; }
+            &-around@{suffix}   { justify-content: space-around; }
+            &-between@{suffix}  { justify-content: space-between; }
         }
     }
 
@@ -168,17 +166,17 @@
     // Create breakpoints
     .responsive(@index: @m) when (@index > 1) and (@m = (@n + 1)) {
         .responsive((@index - 1)); // next iteration
-        @current-class: extract(@suffixes, @index);
-        @current-breakpoint: extract(@breakpoints, (@index - 1));
+        @current-suffix: extract(@suffixes, @index);
+        @current-breakpoint: extract(@viewport-breakpoints, (@index - 1));
 
         @media @current-breakpoint {
 
             .flx-container-fixed {
-                max-width: extract(@container-maw, (@index - 1));
+                max-width: extract(@container-maxwidth, (@index - 1));
             }
 
-            .render-flex-modifiers(@current-class);
-            .render-grid(@current-class);
+            .render-flex-modifiers(@current-suffix);
+            .render-grid(@current-suffix);
         }
     }
 
@@ -222,15 +220,15 @@
         align-items: stretch;
     }
 
-    // Render modifiers
-    .render-flex-modifiers(@first-suffix);
+    // Render modifiers and grid with no suffix
+    .render-flex-modifiers(~"");
+    .render-grid(~"");
 
-    // Render default state before first breakpoint
+    // Render with the first suffix
+    .render-flex-modifiers(@first-suffix);
     .render-grid(@first-suffix);
 
     // Render mediaqueries with breakpoints if any
     .responsive();
 
-};
-
-@grid-render();
+}
