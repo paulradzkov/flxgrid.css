@@ -1,6 +1,7 @@
 # flxgrid.css — flexbox grid system
 
 [![npm version](https://badge.fury.io/js/flxgrid.css.svg)](http://badge.fury.io/js/flxgrid.css)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpaulradzkov%2Fflxgrid.css.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpaulradzkov%2Fflxgrid.css?ref=badge_shield)
 
 Makes grid classes for given number of columns (default: 12) and breakpoints (default: xs, sm, md, lg).
 
@@ -91,3 +92,7 @@ Redefining gutter-width and breakpoints:
     @suffixes: xxs, xs, sm, md, lg, xlg;
 }
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpaulradzkov%2Fflxgrid.css.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpaulradzkov%2Fflxgrid.css?ref=badge_large)
